@@ -6,4 +6,4 @@ Refer to the official API documentation located at:
 * [Spot](https://www.btse.com/apiexplorer/spot)
 
 Examples
-* [Python]()
+* [Python](https://github.com/btsecom/api-sample/tree/master/python)
