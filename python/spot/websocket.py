@@ -13,7 +13,7 @@ async def connect_forever():
     url = BTSE_WSEndpoint + path
     async with websockets.connect(url) as websocket:
         # Authentication
-        auth_payload = json.dumps(gen_auth(keypair['API-PASSPHRASE'], keypair['API-KEY']))
+        auth_payload = json.dumps(gen_auth(keypair['API-KEY'], keypair['API-PASSPHRASE']))
         await websocket.send(auth_payload)
 
         # Subscription
