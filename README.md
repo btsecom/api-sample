@@ -9,6 +9,11 @@ Examples
 * [Python](https://github.com/btsecom/api-sample/tree/master/python)
 * [Nodejs](https://github.com/btsecom/api-sample/tree/master/nodejs)
 
+    * API version
+
+        * Spot: v3.2
+        * Futures: v2.1
+
     * How to playing with examples
 
         1. Set `nodejs` as your current working directory

@@ -1,8 +1,9 @@
 const axios = require('axios');
+const { SPOT_API_VERSION } = require('../../utils/constants');
 const { getSpotUrl, getAuthHeaders } = require('../../utils/common');
 
 const getWalletInformation = async () => {
-  const endpoint = '/api/v3.2/user/wallet';
+  const endpoint = `/api/${SPOT_API_VERSION}/user/wallet`;
   try {
     const res = await axios.get(getSpotUrl(endpoint), {
       headers: getAuthHeaders(endpoint),

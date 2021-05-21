@@ -1,8 +1,9 @@
 const axios = require('axios');
+const { FUTURES_API_VERSION } = require('../../utils/constants');
 const { getFuturesUrl, getAuthHeaders } = require('../../utils/common');
 
 const cancelOrder = async ({ symbol, orderID, clOrderID }) => {
-  const endpoint = '/api/v2.1/order';
+  const endpoint = `/api/${FUTURES_API_VERSION}/order`;
   try {
     const res = await axios.delete(getFuturesUrl(endpoint), {
       headers: getAuthHeaders(endpoint),

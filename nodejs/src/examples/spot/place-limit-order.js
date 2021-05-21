@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { SPOT_API_VERSION } = require('../../utils/constants');
 const { getSpotUrl, getAuthHeaders } = require('../../utils/common');
 
 const placeLimitOrder = async ({
@@ -17,7 +18,7 @@ const placeLimitOrder = async ({
   txType,
   type,
 }) => {
-  const endpoint = '/api/v3.2/order';
+  const endpoint = `/api/${SPOT_API_VERSION}/order`;
   const body = {
     clOrderID,
     deviation,

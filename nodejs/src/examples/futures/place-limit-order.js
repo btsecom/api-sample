@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { FUTURES_API_VERSION } = require('../../utils/constants');
 const { getFuturesUrl, getAuthHeaders } = require('../../utils/common');
 
 const placeLimitOrder = async ({
@@ -17,7 +18,7 @@ const placeLimitOrder = async ({
   clOrderID,
   trigger,
 }) => {
-  const endpoint = '/api/v2.1/order';
+  const endpoint = `/api/${FUTURES_API_VERSION}/order`;
   const body = {
     size,
     price,
