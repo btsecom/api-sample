@@ -1,0 +1,11 @@
+version: '3'
+services:
+  btse-api-nodejs:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    image: btse-api-nodejs:${TAG:-latest}
+    volumes:
+      - ./src:/app/src
+    env_file:
+      - .env
