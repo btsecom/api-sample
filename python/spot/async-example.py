@@ -4,6 +4,9 @@ from btseauth_spot import get_headers
 from decimal import Decimal
 import json
 import time
+from typing import (
+    Dict,
+)
 
 '''
  Use this Test script to make sure that limit orders can be 
@@ -15,20 +18,17 @@ side = 'BUY'
 price = 18038.5
 
 BTSE_Endpoint = 'https://testapi.btse.io/spot'
-open_order_params = {'symbol':  symbol}
+
 path = '/api/v3.2/user/open_orders'
 url = BTSE_Endpoint+path
 
-from typing import (
-    Dict,
-)
-
 limit_path = '/api/v3.2/order'
-limit_url = BTSE_Endpoint+path
+cancel_path = '/api/v3.2/order'
+
+open_order_params = {'symbol':  symbol}
 
 ts = int(time.time())
 clientOID = f"buy-{symbol}-" + str(ts)
-
 
 limit_order_form = {"symbol": f"{symbol}",
                     "side": f"{side}", 
@@ -39,8 +39,6 @@ limit_order_form = {"symbol": f"{symbol}",
                     "txType": "LIMIT", 
                     "clOrderID": f"{clientOID}"}
 
-#######
-cancel_path = '/api/v3.2/order'
 
 # use these dicts for deletion of open orders
 def get_cancelparams(trade_msg: Dict[str, any]): 
