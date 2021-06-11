@@ -1,4 +1,4 @@
 aiohttp==3.7.3
-websockets==8.1
+websockets==9.1
 requests==2.22.0
 ujson==4.0.1
