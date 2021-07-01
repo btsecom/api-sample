@@ -1,7 +1,7 @@
 # BTSE API Connectors
 Sample connectors for connecting to the BTSE API.
 
-Refer to the official API documentation located at: 
+Refer to the official API documentation located at:
 * [Futures](https://www.btse.com/apiexplorer/futures)
 * [Spot](https://www.btse.com/apiexplorer/spot)
 
@@ -13,6 +13,7 @@ Examples
 
         * Spot: v3.2
         * Futures: v2.1
+        * Otc: v1
 
     * How to playing with examples
 
