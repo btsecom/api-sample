@@ -35,16 +35,3 @@ process.on('SIGINT', function () {
   client.close();
   process.exit();
 });
-
-/*
-const getOrderbook = async () => {
-  try {
-    const res = await axios.get(getSpotUrl(endpoint), {});
-    return res.data;
-  } catch (error) {
-    return error;
-  }
-};
-
-getMarketSummary({}).then(console.log).catch(console.error);
-*/
