@@ -5,6 +5,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
+RUN apk --no-cache --virtual build-dependencies add \
+        python \
+        make \
+        g++
 RUN yarn install && yarn cache clean
 
 ARG BUILD_DATE
