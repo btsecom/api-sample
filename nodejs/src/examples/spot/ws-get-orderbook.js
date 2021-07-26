@@ -1,4 +1,4 @@
-const webSocket = require('websocket').w3cwebsocket;
+const webSocket = require('ws');
 const { getWsSpotUrl } = require('../../utils/common');
 
 const client = new webSocket(getWsSpotUrl());
