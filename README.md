@@ -15,7 +15,7 @@ Examples
         * Futures: v2.1
         * Otc: v1
 
-    * How to playing with examples
+    * How to play with node examples
 
         1. Set `nodejs` as your current working directory
         1. Run `cp .env.example .env` and fill-in needed data in `.env`
