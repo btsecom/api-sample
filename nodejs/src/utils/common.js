@@ -8,6 +8,7 @@ const getFuturesUrl = (endpoint) => getUrl('futures', endpoint);
 const getOtcUrl = (endpoint) => getUrl('otc', endpoint);
 const getWsSpotUrl = () => `${WS_HOST}/spot`;
 const getWsFuturesUrl = () => `${WS_HOST}/futures`;
+const getWsOtcUrl = () => `${WS_HOST}/otc`;
 
 const getAuthHeaders = (endpoint, body) => {
   const nonce = Date.now().toString();
@@ -19,4 +20,4 @@ const getAuthHeaders = (endpoint, body) => {
   };
 };
 
-module.exports = { getSpotUrl, getFuturesUrl, getOtcUrl, getWsSpotUrl, getWsFuturesUrl, getAuthHeaders };
+module.exports = { getSpotUrl, getFuturesUrl, getOtcUrl, getWsSpotUrl, getWsFuturesUrl, getWsOtcUrl, getAuthHeaders };
