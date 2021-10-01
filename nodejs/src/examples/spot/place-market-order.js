@@ -47,7 +47,7 @@ const placeMarketOrder = async ({
 
 placeMarketOrder({
   clOrderID: 'test-order-placement',
-  price: 0.5,
+  size: 0.0005,
   side: 'BUY',
   symbol: 'BTC-USD',
   txType: 'LIMIT',

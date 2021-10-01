@@ -4,11 +4,11 @@ const { getWsOtcUrl, getAuthHeaders } = require('../../utils/common');
 const url = getWsOtcUrl();
 const client = new webSocket(url);
 
-client.onerror = function () {
-  console.log('Connection Error');
+client.onerror = () => {
+  console.log('connection error');
 };
 
-client.onopen = function () {
+client.onopen = () => {
   function subscribe() {
     if (client.readyState === client.OPEN) {
       // send auth
@@ -17,11 +17,7 @@ client.onopen = function () {
 
       const authPayload = {
         op: 'authKeyExpires',
-        args: [
-          header['btse-api'],
-          header['btse-nonce'],
-          header['btse-sign']
-        ],
+        args: [header['btse-api'], header['btse-nonce'], header['btse-sign']],
       };
 
       console.log('sending auth msg: ' + JSON.stringify(authPayload));
@@ -45,17 +41,17 @@ client.onopen = function () {
   subscribe();
 };
 
-client.onclose = function () {
-  console.log('echo-protocol Client Closed');
+client.onclose = () => {
+  console.log('echo-protocol client closed');
 };
 
-client.onmessage = function (e) {
+client.onmessage = (e) => {
   if (typeof e.data === 'string') {
     console.log(e.data);
   }
 };
 
-process.on('SIGINT', function () {
+process.on('SIGINT', () => {
   client.close();
   process.exit();
 });

@@ -2,17 +2,19 @@ const webSocket = require('ws');
 const { getWsSpotUrl } = require('../../utils/common');
 
 const client = new webSocket(getWsSpotUrl());
+const market = 'BTC-USD';
+var lastTimestamp = 0;
 
-client.onerror = function () {
-  console.log('Connection Error');
+client.onerror = () => {
+  console.log('connection error');
 };
 
-client.onopen = function () {
+client.onopen = () => {
   function subscribe() {
     if (client.readyState === client.OPEN) {
       const payload = {
         op: 'subscribe',
-        args: ['orderBookApi:BTC-USD_0'],
+        args: [`orderBookApi:${market}_0`],
       };
       console.log('sending msg: ' + JSON.stringify(payload));
       client.send(JSON.stringify(payload));
@@ -21,17 +23,23 @@ client.onopen = function () {
   subscribe();
 };
 
-client.onclose = function () {
-  console.log('echo-protocol Client Closed');
+client.onclose = () => {
+  console.log('echo-protocol client closed');
 };
 
-client.onmessage = function (e) {
+client.onmessage = (e) => {
   if (typeof e.data === 'string') {
+    const now = Date.now();
+    if (!lastTimestamp) {
+      lastTimestamp = now;
+    }
     console.log("Received: '" + e.data + "'");
+    console.log(`market: ${market}, time diff: ${now - lastTimestamp} ms`);
+    lastTimestamp = now;
   }
 };
 
-process.on('SIGINT', function () {
+process.on('SIGINT', () => {
   client.close();
   process.exit();
 });

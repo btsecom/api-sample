@@ -48,7 +48,6 @@ const placeMarketOrder = async ({
 placeMarketOrder({
   clOrderID: 'test-order-placement',
   size: 1,
-  price: 0.5,
   side: 'BUY',
   timeInForce: 'GTC',
   symbol: 'BTCPFC',
