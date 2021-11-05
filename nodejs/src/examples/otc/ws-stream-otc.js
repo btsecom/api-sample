@@ -25,17 +25,26 @@ client.onopen = () => {
 
       // send streaming quote
       // subscribe to topic
-      const payload = {
-        op: 'quote',
-        symbol: 'BTC-SGD',
-        clOrderId: 'sample-order-id',
-        quantity: {
-          quantity: 1000,
-          currency: 'SGD',
-        },
+      const subscribeTopic = (symbol, quantity, currency, clOrderId='')  => {
+        const payload = {
+          op: 'quote',
+          symbol,
+          clOrderId,
+          quantity: {
+            quantity,
+            currency,
+          },
+        };
+
+        console.log('sending msg: ' + JSON.stringify(payload));
+        client.send(JSON.stringify(payload));
       };
-      console.log('sending msg: ' + JSON.stringify(payload));
-      client.send(JSON.stringify(payload));
+
+      subscribeTopic('BTC-SGD', 1, 'SGD', 'order1');
+      subscribeTopic('BTC-SGD', 2, 'SGD', 'order2');
+      subscribeTopic('BTC-SGD', 3, 'SGD', 'order3');
+      subscribeTopic('BTC-SGD', 4, 'SGD', 'order4');
+      subscribeTopic('BTC-SGD', 5, 'SGD', 'order5');
     }
   }
   subscribe();
@@ -48,6 +57,7 @@ client.onclose = () => {
 client.onmessage = (e) => {
   if (typeof e.data === 'string') {
     console.log(e.data);
+    console.log('');
   }
 };
 
