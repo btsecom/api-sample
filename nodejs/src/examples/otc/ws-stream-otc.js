@@ -25,7 +25,7 @@ client.onopen = () => {
 
       // send streaming quote
       // subscribe to topic
-      const subscribeTopic = (symbol, quantity, currency, clOrderId='')  => {
+      const subscribeTopic = (symbol, quantity, currency, clOrderId = '') => {
         const payload = {
           op: 'quote',
           symbol,

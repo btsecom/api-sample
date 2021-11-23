@@ -10,6 +10,7 @@ const getWsSpotUrl = () => `${WS_HOST}/spot`;
 const getWsFuturesUrl = () => `${WS_HOST}/futures`;
 const getWsOtcUrl = () => `${WS_HOST}/otc`;
 const getWsOssSpotUrl = () => `${WS_HOST}/oss/spot`;
+const getWsOssFuturesUrl = () => `${WS_HOST}/oss/futures`;
 
 const getAuthHeaders = (endpoint, body) => {
   const nonce = Date.now().toString();
@@ -21,4 +22,14 @@ const getAuthHeaders = (endpoint, body) => {
   };
 };
 
-module.exports = { getSpotUrl, getFuturesUrl, getOtcUrl, getWsSpotUrl, getWsFuturesUrl, getWsOtcUrl, getWsOssSpotUrl, getAuthHeaders };
+module.exports = {
+  getSpotUrl,
+  getFuturesUrl,
+  getOtcUrl,
+  getWsSpotUrl,
+  getWsFuturesUrl,
+  getWsOtcUrl,
+  getWsOssSpotUrl,
+  getWsOssFuturesUrl,
+  getAuthHeaders,
+};
