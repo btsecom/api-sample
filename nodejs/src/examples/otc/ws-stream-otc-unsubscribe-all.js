@@ -1,5 +1,5 @@
 const webSocket = require('ws');
-const { getWsOtcUrl, getAuthHeaders } = require('../../utils/common');
+const { getWsOtcUrl } = require('../../utils/common');
 
 const url = getWsOtcUrl();
 const client = new webSocket(url);
@@ -11,7 +11,6 @@ client.onerror = () => {
 client.onopen = () => {
   function subscribe() {
     if (client.readyState === client.OPEN) {
-
       // send streaming quote
       // subscribe to topic
       const subscribeTopic = (op, symbol, quantity, currency, clOrderId = '') => {
@@ -37,7 +36,7 @@ client.onopen = () => {
       subscribeTopic('op', 'BTC-EUR', 5, 'EUR', 'order5');
 
       // unsubscribe-all
-      client.send(JSON.stringify({op: 'unsubscribe-quote-all'}));
+      client.send(JSON.stringify({ op: 'unsubscribe-quote-all' }));
     }
   }
   subscribe();
