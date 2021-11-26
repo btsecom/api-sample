@@ -4,7 +4,7 @@ const { getWsOssFuturesUrl } = require('../../utils/common');
 const client = new webSocket(getWsOssFuturesUrl());
 const snapOrders = {};
 const deltaOrders = {};
-const market = 'BTCPFC-USD';
+const market = 'BTCPFC';
 var lastTimestamp = 0;
 var deltaSeqNum = 0;
 
