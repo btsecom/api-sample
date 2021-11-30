@@ -4,7 +4,7 @@
 
 ### Added
 
-- Add websocket notification examples
+- Add websocket notification v1/v2 examples
 
 ## 2021-05-21
 
