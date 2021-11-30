@@ -1,5 +1,11 @@
 # Changelog
 
+## 2021-11-30
+
+### Added
+
+- Add websocket notification examples
+
 ## 2021-05-21
 
 ### Added
