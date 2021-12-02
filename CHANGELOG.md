@@ -1,5 +1,13 @@
 # Changelog
 
+## 2021-12-02
+
+### Added
+
+- Add js notification websocket message examples for futures
+- Add js get spot trade history example
+
+
 ## 2021-11-30
 
 ### Added
