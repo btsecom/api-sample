@@ -2,12 +2,19 @@ const axios = require('axios');
 const { SPOT_API_VERSION } = require('../../utils/constants');
 const { getSpotUrl, getAuthHeaders } = require('../../utils/common');
 
-const cancelOrder = async (params) => {
+const amendOrder = async ({ symbol, orderID, clOrderID, type, value, slide }) => {
   const endpoint = `/api/${SPOT_API_VERSION}/order`;
+  const body = {
+    symbol,
+    orderID,
+    clOrderID,
+    type,
+    value,
+    slide,
+  };
   try {
-    const res = await axios.delete(getSpotUrl(endpoint), {
-      headers: getAuthHeaders(endpoint),
-      params,
+    const res = await axios.post(getSpotUrl(endpoint), body, {
+      headers: getAuthHeaders(endpoint, body),
     });
     return res.data;
   } catch (error) {
@@ -15,9 +22,11 @@ const cancelOrder = async (params) => {
   }
 };
 
-cancelOrder({
+amendOrder({
   symbol: 'BTC-USD',
   clOrderID: 'test-order-placement',
+  type: 'SIZE',
+  value: 0.005,
 })
   .then(console.log)
   .catch(console.error);

@@ -1,1 +1,8 @@
 __pycache__
+
+# env file
+.env
+!.env.example
+
+# doc
+*.swp

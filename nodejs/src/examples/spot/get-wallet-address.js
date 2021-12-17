@@ -2,8 +2,8 @@ const axios = require('axios');
 const { SPOT_API_VERSION } = require('../../utils/constants');
 const { getSpotUrl, getAuthHeaders } = require('../../utils/common');
 
-const getOpenOrders = async (params) => {
-  const endpoint = `/api/${SPOT_API_VERSION}/user/open_orders`;
+const getWalletAddress = async (params) => {
+  const endpoint = `/api/${SPOT_API_VERSION}/user/wallet/address`;
   try {
     const res = await axios.get(getSpotUrl(endpoint), {
       headers: getAuthHeaders(endpoint),
@@ -15,8 +15,8 @@ const getOpenOrders = async (params) => {
   }
 };
 
-getOpenOrders({
-  symbol: 'BTC-USD',
+getWalletAddress({
+  currency: 'BTC',
 })
   .then(console.log)
   .catch(console.error);

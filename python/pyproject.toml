@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "api"
+version = "0.1.0"
+description = ""
+authors = ["Yuan-Chen Ho <yuan-chen.ho@nogle.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.26.0"
+python-dotenv = "^0.19.2"
+websocket-client = "^1.2.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+target-version = ['py36', 'py37', 'py38', 'py39']
+include = '\.pyi?$'

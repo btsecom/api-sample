@@ -101,6 +101,7 @@ client.onmessage = (e) => {
         client.close();
       }
 
+      deltaSeqNum = data.seqNum;
       const asks = snapOrders.asks || {};
       const bids = snapOrders.bids || {};
       deltaOrders.asks = raw.data.asks.reduce(reduceFunc, asks);
@@ -117,7 +118,7 @@ client.onmessage = (e) => {
     console.log(`Market: ${market}, time diff: ${now - lastTimestamp} ms`);
     outputSummary(asksResp.diff, asksResp.total, 'asks');
     outputSummary(bidsResp.diff, bidsResp.total, 'bids');
-    console.log(`seq num: ${data.seqNum}, prev: ${data.prevSeqNum}`);
+    console.log(`seq num: ${data.seqNum}, prev: ${data.prevSeqNum}, delta: ${deltaSeqNum}`);
     lastTimestamp = now;
   }
 };

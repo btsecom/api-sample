@@ -1,5 +1,12 @@
 # Changelog
 
+## 2021-12-09
+
+### Added
+
+- Add `earn` related api samples
+
+
 ## 2021-12-02
 
 ### Added
