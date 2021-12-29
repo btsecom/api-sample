@@ -5,8 +5,8 @@ const client = new webSocket(getWsOssSpotUrl());
 const snapOrders = {};
 const deltaOrders = {};
 const market = 'BTC-USD';
-var lastTimestamp = 0;
-var deltaSeqNum = 0;
+let lastTimestamp = 0;
+let deltaSeqNum = 0;
 
 client.onerror = () => {
   console.log('connection error');
@@ -50,8 +50,8 @@ client.onmessage = (e) => {
     return [...new Set(Object.keys(concat))].sort(sortDesc);
   };
   const output = (s, d, type) => {
-    var diffCount = 0;
-    var totalCount = 0;
+    let diffCount = 0;
+    let totalCount = 0;
     const reset = '\x1b[0m';
     const diff = '\x1b[35m';
     const askKeys = dedupKeysDesc(s, d);

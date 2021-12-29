@@ -31,37 +31,47 @@ def get_env_info():
 
 
 def get_spot_api_version():
-    """Get Spot api version"""
+    """Get spot api version"""
     return "v3.2"
 
 
 def get_futures_api_version():
-    """Get Futures api version"""
+    """Get futures api version"""
     return "v2.1"
 
 
 def get_otc_api_version():
-    """Get Otc api version"""
+    """Get otc api version"""
     return "v1"
 
 
 def get_spot_full_url(host, path):
-    """Get Spot url based on host and path"""
+    """Get spot url based on host and path"""
     return "{0}/spot{1}".format(host, path)
 
 
+def get_spot_ws_url(host):
+    """Get spot ws url"""
+    return "{0}/spot".format(host)
+
+
 def get_futures_full_url(host, path):
-    """Get Futures url based on host and path"""
+    """Get futures url based on host and path"""
     return "{0}/futures{1}".format(host, path)
 
 
+def get_futures_ws_url(host):
+    """Get futures ws url"""
+    return "{0}/futures".format(host)
+
+
 def get_otc_full_url(host, path):
-    """Get Otc url based on host and path"""
+    """Get otc url based on host and path"""
     return "{0}/otc{1}".format(host, path)
 
 
 def get_otc_ws_url(host):
-    """Get Otc we url"""
+    """Get otc ws url"""
     return "{0}/otc".format(host)
 
 

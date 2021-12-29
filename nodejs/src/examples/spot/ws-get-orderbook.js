@@ -3,7 +3,7 @@ const { getWsSpotUrl } = require('../../utils/common');
 
 const client = new webSocket(getWsSpotUrl());
 const market = 'BTC-USD';
-var lastTimestamp = 0;
+let lastTimestamp = 0;
 
 client.onerror = () => {
   console.log('connection error');
