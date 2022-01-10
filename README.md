@@ -11,6 +11,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-01-10
+  - Update Nodejs orderbook delta examples
+
 * 2021-12-27
   - Update Python and Nodejs examples
 

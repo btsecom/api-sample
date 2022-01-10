@@ -5,6 +5,9 @@ const client = new webSocket(getWsOssSpotUrl());
 const snapOrders = {};
 const deltaOrders = {};
 const market = 'BTC-USD';
+const recordsToShow = 15; // number of asks/bids to show
+const displaySnapshot = false; // enable this to display snapshot orderbook
+const displayDelta = true; // enable this to display delta orderbook
 let lastTimestamp = 0;
 let deltaSeqNum = 0;
 
@@ -42,38 +45,31 @@ client.onmessage = (e) => {
     }
     return map;
   };
-  const dedupKeysDesc = (s, d) => {
-    const sortDesc = (a, b) => {
-      return b - a;
-    };
-    const concat = Object.assign({}, s, d);
-    return [...new Set(Object.keys(concat))].sort(sortDesc);
-  };
-  const output = (s, d, type) => {
-    let diffCount = 0;
-    let totalCount = 0;
-    const reset = '\x1b[0m';
-    const diff = '\x1b[35m';
-    const askKeys = dedupKeysDesc(s, d);
-    console.log(`${type}:`);
-    for (const k of askKeys) {
-      const sk = s ? s[k] : '';
-      const dk = d ? d[k] : '';
-      const color = sk === dk ? reset : diff;
-      diffCount = sk === dk ? diffCount : diffCount + 1;
-      totalCount += 1;
-      console.log(color, `\t${k}:\t${sk} / ${dk}`);
+
+  const printOrderbook = (data, typeDesc, n) => {
+    const askKeys = Object.keys(data.asks).sort().slice(0, n).reverse();
+    const bidKeys = Object.keys(data.bids).sort().reverse().slice(0, n);
+
+    // validate cross orderbook
+    const bestAsk = askKeys[askKeys.length - 1];
+    const bestBid = bidKeys[0];
+    console.log();
+    console.log(`best ask/bid: ${bestAsk} / ${bestBid}`);
+    console.log();
+    if (bestBid >= bestAsk) {
+      console.log('ERROR: cross orderbook!');
+      client.close();
     }
-    console.log(reset);
-    return {
-      diff: diffCount,
-      total: totalCount,
-    };
-  };
-  const outputSummary = (diff, total, type) => {
-    const ok = total - diff;
-    const per = total !== 0 ? (100 * ok) / total : 0;
-    console.log(`${type}: ${ok}/${total} (${per.toFixed(2)}%)`);
+
+    console.log(`${typeDesc}s: asks/bids`);
+    for (const k of askKeys) {
+      console.log(`\t${k}: ${data.asks[k]}`);
+    }
+    console.log();
+    for (const k of bidKeys) {
+      console.log(`\t${k}: ${data.bids[k]}`);
+    }
+    console.log();
   };
 
   if (typeof e.data === 'string') {
@@ -87,10 +83,8 @@ client.onmessage = (e) => {
     const data = raw.data;
 
     if (topic.startsWith('snapshot')) {
-      const asks = snapOrders.asks || {};
-      const bids = snapOrders.bids || {};
-      snapOrders.asks = raw.data.asks.reduce(reduceFunc, asks);
-      snapOrders.bids = raw.data.bids.reduce(reduceFunc, bids);
+      snapOrders.asks = raw.data.asks.reduce(reduceFunc, {});
+      snapOrders.bids = raw.data.bids.reduce(reduceFunc, {});
     } else if (topic.startsWith('update')) {
       // SeqNum/PrevSeqNum are used to make sure the delta data stream is continuous to construct the full snapshot.
       // If it's not then we need to reconnect to reset the delta stream.
@@ -102,8 +96,8 @@ client.onmessage = (e) => {
       }
 
       deltaSeqNum = data.seqNum;
-      const asks = snapOrders.asks || {};
-      const bids = snapOrders.bids || {};
+      const asks = deltaOrders.asks || {};
+      const bids = deltaOrders.bids || {};
       deltaOrders.asks = raw.data.asks.reduce(reduceFunc, asks);
       deltaOrders.bids = raw.data.bids.reduce(reduceFunc, bids);
     } else {
@@ -111,14 +105,24 @@ client.onmessage = (e) => {
       return;
     }
 
-    // compare the difference between snapshot and delta
-    const asksResp = output(snapOrders.asks, deltaOrders.asks, 'asks (snapshot/update)');
-    const bidsResp = output(snapOrders.bids, deltaOrders.bids, 'bids (snapshot/update)');
+    // print snapshot
+    if (displaySnapshot) {
+      if (snapOrders && snapOrders.asks && snapOrders.bids) {
+        printOrderbook(snapOrders, 'snapshot', recordsToShow);
+      } else {
+        console.log('snapshot data not ready.');
+      }
+    }
 
-    console.log(`Market: ${market}, time diff: ${now - lastTimestamp} ms`);
-    outputSummary(asksResp.diff, asksResp.total, 'asks');
-    outputSummary(bidsResp.diff, bidsResp.total, 'bids');
-    console.log(`seq num: ${data.seqNum}, prev: ${data.prevSeqNum}, delta: ${deltaSeqNum}`);
+    // print delta
+    if (displayDelta) {
+      if (deltaOrders && deltaOrders.asks && deltaOrders.bids) {
+        printOrderbook(deltaOrders, 'delta', recordsToShow);
+      } else {
+        console.log('delta data not ready.');
+      }
+    }
+
     lastTimestamp = now;
   }
 };
