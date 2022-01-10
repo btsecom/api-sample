@@ -77,8 +77,8 @@ const compareOrderbook = () => {
   validateCrosssOrderbook(snapOrders, 'old-snapshot', recordsToShow);
   validateCrosssOrderbook(deltaOrders, 'delta', recordsToShow);
 
-  const {error: askError, total: askTotal} = checkOrderbooks(snapOrders.asks, deltaOrders.asks, 15, true);
-  const {error: bidError, total: bidTotal} = checkOrderbooks(snapOrders.bids, deltaOrders.bids, 15, false);
+  const {error: askError, total: askTotal} = checkOrderbooks(snapOrders.asks, deltaOrders.asks, recordsToShow, true);
+  const {error: bidError, total: bidTotal} = checkOrderbooks(snapOrders.bids, deltaOrders.bids, recordsToShow, false);
 
   totalErrors = totalErrors + askError + bidError;
   totalCounts = totalCounts + askTotal + bidTotal;
