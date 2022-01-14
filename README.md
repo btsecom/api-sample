@@ -6,6 +6,7 @@ Sample connectors for connecting to the BTSE API.
 * [Spot](https://btsecom.github.io/docs/spot/en/#change-log)
 * [Futures](https://btsecom.github.io/docs/futures/en/#change-log)
 * [OTC](https://btsecom.github.io/docs/otc/en/#change-log)
+* [Wallet/Convert/Transfer](https://btsecom.github.io/docs/wallet/en/#change-log)
 * [Streaming](https://btsecom.github.io/docs/streaming/en/#change-log)
 * [Earn](https://btsecom.github.io/docs/earn/en/#change-log)
 
@@ -44,4 +45,4 @@ Sample connectors for connecting to the BTSE API.
     1. Set `nodejs` as your current working directory
     1. Run `cp .env.example .env` and fill-in needed data in `.env`
     1. `make btse-api-nodejs` to build the runtime environment docker image
-    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run src/examples/spot/get-wallet-information.js`
+    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run src/examples/spot/get-wallet-balance.js`

@@ -29,43 +29,43 @@ const compareOrderbook = () => {
       ossClient.close();
       spotClient.close();
     }
-  }
+  };
 
   const checkOrderbooks = (snapshot, delta, n, isAsk = true) => {
     const concat = Object.assign({}, snapshot, delta);
-    const keysRaw = [... new Set(Object.keys(concat))].sort();
-    const keys = (isAsk) ? keysRaw.slice(0, n).reverse() : keysRaw.reverse().slice(0, n);
+    const keysRaw = [...new Set(Object.keys(concat))].sort();
+    const keys = isAsk ? keysRaw.slice(0, n).reverse() : keysRaw.reverse().slice(0, n);
 
     let error = 0;
     const total = keys.length;
     const reset = '\x1b[0m';
     const diff = '\x1b[35m';
-    const title = (isAsk) ? "asks:" : "bids";
+    const title = isAsk ? 'asks:' : 'bids';
     if (debug) {
       console.log(title);
     }
     for (const k of keys) {
       const s = snapshot[k];
       const d = delta[k];
-      error = (s === d) ? error : error + 1;
-      const color = (s === d) ? reset : diff;
+      error = s === d ? error : error + 1;
+      const color = s === d ? reset : diff;
       if (debug) {
         console.log(color, `\t ${k}: ${s} / ${d}`);
       }
     }
     if (debug) {
       console.log(reset);
-      console.log(`Correct %: ${100.0 * (total - error) / total} %`);
+      console.log(`Correct %: ${(100.0 * (total - error)) / total} %`);
       console.log();
     }
     return {
       error,
       total,
     };
-  }
+  };
 
-  const spotReady = (snapOrders && snapOrders.asks && snapOrders.bids);
-  const deltaReady = (deltaOrders && deltaOrders.asks && deltaOrders.bids);
+  const spotReady = snapOrders && snapOrders.asks && snapOrders.bids;
+  const deltaReady = deltaOrders && deltaOrders.asks && deltaOrders.bids;
 
   if (!spotReady || !deltaReady) {
     return;
@@ -77,21 +77,20 @@ const compareOrderbook = () => {
   validateCrosssOrderbook(snapOrders, 'old-snapshot', recordsToShow);
   validateCrosssOrderbook(deltaOrders, 'delta', recordsToShow);
 
-  const {error: askError, total: askTotal} = checkOrderbooks(snapOrders.asks, deltaOrders.asks, recordsToShow, true);
-  const {error: bidError, total: bidTotal} = checkOrderbooks(snapOrders.bids, deltaOrders.bids, recordsToShow, false);
+  const { error: askError, total: askTotal } = checkOrderbooks(snapOrders.asks, deltaOrders.asks, recordsToShow, true);
+  const { error: bidError, total: bidTotal } = checkOrderbooks(snapOrders.bids, deltaOrders.bids, recordsToShow, false);
 
   totalErrors = totalErrors + askError + bidError;
   totalCounts = totalCounts + askTotal + bidTotal;
 
   if (iteration % 100 === 0) {
     console.log('#######################################################################');
-    console.log(`# Total Correct %: ${(100.0 * (totalCounts - totalErrors) / totalCounts).toFixed(2)} %`);
+    console.log(`# Total Correct %: ${((100.0 * (totalCounts - totalErrors)) / totalCounts).toFixed(2)} %`);
     console.log('#######################################################################');
     console.log();
     totalCounts = 0;
     totalErrors = 0;
   }
-
 };
 
 // oss
@@ -190,8 +189,8 @@ spotClient.onmessage = (e) => {
     const topic = raw && raw.topic ? raw.topic : '';
 
     if (topic.startsWith('orderBookApi')) {
-      const asks = Object.assign({}, ...raw.data.sellQuote.map((x) => ({[x.price]: x.size})));
-      const bids = Object.assign({}, ...raw.data.buyQuote.map((x) => ({[x.price]: x.size})));
+      const asks = Object.assign({}, ...raw.data.sellQuote.map((x) => ({ [x.price]: x.size })));
+      const bids = Object.assign({}, ...raw.data.buyQuote.map((x) => ({ [x.price]: x.size })));
       snapOrders.asks = asks;
       snapOrders.bids = bids;
 
