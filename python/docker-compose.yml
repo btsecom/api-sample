@@ -1,0 +1,11 @@
+version: '3'
+services:
+  btse-api-python:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    image: btse-api-python:${TAG:-latest}
+    volumes:
+      - ./api:/app/api
+    env_file:
+      - .env

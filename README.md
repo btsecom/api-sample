@@ -32,17 +32,16 @@ Sample connectors for connecting to the BTSE API.
 * [Python](https://github.com/btsecom/api-sample/tree/master/python)
 
   * How to play with python examples
+    1. Run `cp config/.env.example python/.env` and fill-in needed data in `.env`
     1. Set `python` as your current working directory
-    1. Run `cp .env.example .env` and fill-in needed data in `.env`
-    1. Make sure [Python Poetry](https://python-poetry.org/docs/) is installed
-    1. Install dependencies by `poetry install`
-    1. Execute the sample by `poetry run api/streaming_otc.py`
+    1. `make btse-api-python` to build the runtime environment docker image
+    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run api/examples/spot/spot_get_wallet_balance.py`
 
 
 * [Nodejs](https://github.com/btsecom/api-sample/tree/master/nodejs)
 
   * How to play with node examples
+    1. Run `cp config/.env.example nodejs/.env` and fill-in needed data in `.env`
     1. Set `nodejs` as your current working directory
-    1. Run `cp .env.example .env` and fill-in needed data in `.env`
     1. `make btse-api-nodejs` to build the runtime environment docker image
     1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run src/examples/spot/get-wallet-balance.js`
