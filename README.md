@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-01-18
+  - Add python docker environment and adjust file structure
+
 * 2022-01-13
   - Add examples for wallet convert and transfer
 
@@ -44,4 +47,4 @@ Sample connectors for connecting to the BTSE API.
     1. Run `cp config/.env.example nodejs/.env` and fill-in needed data in `.env`
     1. Set `nodejs` as your current working directory
     1. `make btse-api-nodejs` to build the runtime environment docker image
-    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run src/examples/spot/get-wallet-balance.js`
+    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run app/spot/query-market-summary.js    `

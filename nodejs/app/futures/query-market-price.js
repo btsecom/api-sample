@@ -3,7 +3,7 @@ const { FUTURES_API_VERSION } = require('../utils/constants');
 const { getFuturesUrl } = require('../utils/common');
 
 const getMarketPrice = async (params) => {
-  const endpoint = `/api/${FUTURES_API_VERSION}/market_summary`;
+  const endpoint = `/api/${FUTURES_API_VERSION}/price`;
   try {
     const res = await axios.get(getFuturesUrl(endpoint), {
       params,

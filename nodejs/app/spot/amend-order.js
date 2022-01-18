@@ -13,7 +13,7 @@ const amendOrder = async ({ symbol, orderID, clOrderID, type, value, slide }) =>
     slide,
   };
   try {
-    const res = await axios.post(getSpotUrl(endpoint), body, {
+    const res = await axios.put(getSpotUrl(endpoint), body, {
       headers: getAuthHeaders(endpoint, body),
     });
     return res.data;
