@@ -6,6 +6,6 @@ services:
       dockerfile: Dockerfile
     image: btse-api-nodejs:${TAG:-latest}
     volumes:
-      - ./src:/app/src
+      - ./app:/app
     env_file:
       - .env
