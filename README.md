@@ -35,7 +35,7 @@ Sample connectors for connecting to the BTSE API.
     1. Run `cp config/.env.example python/.env` and fill-in needed data in `.env`
     1. Set `python` as your current working directory
     1. `make btse-api-python` to build the runtime environment docker image
-    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run api/examples/spot/spot_get_wallet_balance.py`
+    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run api/spot_get_wallet_balance.py`
 
 
 * [Nodejs](https://github.com/btsecom/api-sample/tree/master/nodejs)
