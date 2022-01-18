@@ -47,4 +47,4 @@ Sample connectors for connecting to the BTSE API.
     1. Run `cp config/.env.example nodejs/.env` and fill-in needed data in `.env`
     1. Set `nodejs` as your current working directory
     1. `make btse-api-nodejs` to build the runtime environment docker image
-    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run app/spot/query-market-summary.js    `
+    1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run app/spot/query-market-summary.js`
