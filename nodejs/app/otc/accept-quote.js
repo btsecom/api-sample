@@ -1,11 +1,14 @@
 const axios = require('axios');
 const { OTC_API_VERSION } = require('../utils/constants');
 const { getOtcUrl, getAuthHeaders } = require('../utils/common');
-const { getOtcQuote } = require('./get-quote');
+const { getOtcQuote } = require('./request-for-quote');
 
-const acceptOtcQuote = async ({ quoteId }) => {
+const acceptOtcQuote = async ({ quoteId, baseAmount, quoteAmount }) => {
   const endpoint = `/api/${OTC_API_VERSION}/accept/${quoteId}`;
-  const body = {};
+  const body = {
+    baseAmount,
+    quoteAmount,
+  };
   try {
     const res = await axios.post(getOtcUrl(endpoint), body, {
       headers: getAuthHeaders(endpoint, body),
@@ -20,7 +23,8 @@ getOtcQuote({
   baseCurrency: 'BTC',
   orderCurrency: 'USD',
   side: 'buy',
-  orderAmountInOrderCurrency: 1,
+  orderSizeInBaseCurrency: 1,
+  orderAmountInOrderCurrency: 0,
 })
   .then((resp) => {
     console.log(`resp: ${JSON.stringify(resp)}`);
@@ -30,6 +34,8 @@ getOtcQuote({
     } else {
       acceptOtcQuote({
         quoteId,
+        baseAmount: 0.5,
+        quoteAmount: 0,
       })
         .then(console.log)
         .catch(console.error);

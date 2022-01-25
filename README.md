@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-01-15
+  - Add nodejs example to `fetch wallet convert rate` and `otc partial transact`
+
 * 2022-01-18
   - Add python docker environment and adjust file structure
 
