@@ -12,11 +12,14 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-02-18
+  - Add more examples for `amend order` and others
+
 * 2022-02-02
   - Futures settle_in sample to change settlement currency
 
 * 2022-01-25
-  - Add nodejs example to `fetch wallet convert rate` and `otc partial transact`
+  - Add nodejs example for `fetch wallet convert rate` and `otc partial transact`
 
 * 2022-01-18
   - Add python docker environment and adjust file structure
