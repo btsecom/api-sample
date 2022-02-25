@@ -3,7 +3,7 @@ const { SPOT_API_VERSION } = require('../utils/constants');
 const { getSpotUrl } = require('../utils/common');
 
 const getMarketPrice = async (params) => {
-  const endpoint = `/api/${SPOT_API_VERSION}/market_summary`;
+  const endpoint = `/api/${SPOT_API_VERSION}/price`;
   try {
     const res = await axios.get(getSpotUrl(endpoint), {
       params,

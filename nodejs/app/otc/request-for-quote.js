@@ -28,6 +28,7 @@ getOtcQuote({
   side: 'buy',
   orderSizeInBaseCurrency: 1,
   orderAmountInOrderCurrency: 0, // either orderSizeInBaseCurrency/orderAmountInOrderCurrency has to be non-zero
+  clientOrderId: 'my-test-client-order-id',
 })
   .then(console.log)
   .catch(console.error);

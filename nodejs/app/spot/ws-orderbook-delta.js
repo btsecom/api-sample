@@ -5,6 +5,7 @@ const client = new webSocket(getWsOssSpotUrl());
 const snapOrders = {};
 const deltaOrders = {};
 const market = 'BTC-USD';
+const grouping = 2;
 const recordsToShow = 15; // number of asks/bids to show
 const displaySnapshot = false; // enable this to display snapshot orderbook
 const displayDelta = true; // enable this to display delta orderbook
@@ -20,7 +21,7 @@ client.onopen = () => {
     if (client.readyState === client.OPEN) {
       const payload = {
         op: 'subscribe',
-        args: [`snapshot:${market}`, `update:${market}`],
+        args: [`snapshot:${market}_${grouping}`, `update:${market}_${grouping}`],
       };
       console.log('sending msg: ' + JSON.stringify(payload));
       client.send(JSON.stringify(payload));

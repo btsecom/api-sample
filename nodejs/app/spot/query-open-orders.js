@@ -16,7 +16,7 @@ const getOpenOrders = async (params) => {
 };
 
 getOpenOrders({
-  symbol: 'BTC-USD',
+  symbol: 'ETH-USD',
 })
   .then(console.log)
   .catch(console.error);

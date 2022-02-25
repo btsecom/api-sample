@@ -17,6 +17,8 @@ const getOrderbook = async (params) => {
 getOrderbook({
   symbol: 'BTC-USDT',
   group: 1,
+  limit_bids: 5,
+  limit_asks: 10,
 })
   .then(console.log)
   .catch(console.error);
