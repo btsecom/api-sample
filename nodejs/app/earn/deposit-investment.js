@@ -1,6 +1,6 @@
 const axios = require('axios');
-const { SPOT_API_VERSION } = require('../../utils/constants');
-const { getSpotUrl, getAuthHeaders } = require('../../utils/common');
+const { SPOT_API_VERSION } = require('../utils/constants');
+const { getSpotUrl, getAuthHeaders } = require('../utils/common');
 
 const buyEarnProduct = async ({ productId, amount, renew, rate, day }) => {
   const endpoint = `/api/${SPOT_API_VERSION}/invest/deposit`;
