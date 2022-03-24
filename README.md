@@ -12,6 +12,13 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-03-24
+  - Add python and js samples for oss delta orderbook
+    - `nodejs -> app -> spot -> ws-oss-delta.js`
+    - `nodejs -> app -> spot -> ws-oss-snapshot.js`
+    - `python -> api -> spot_ws_get_oss_delta.py`
+    - `python -> api -> spot_ws_get_oss_snapshot.py`
+
 * 2022-02-18
   - Add more examples for `amend order` and others
 

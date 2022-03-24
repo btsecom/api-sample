@@ -65,6 +65,16 @@ def get_futures_ws_url(host):
     return "{0}/futures".format(host)
 
 
+def get_oss_spot_ws_url(host):
+    """Get oss spot ws url"""
+    return "{0}/oss/spot".format(host)
+
+
+def get_oss_futures_ws_url(host):
+    """Get oss futures ws url"""
+    return "{0}/oss/futures".format(host)
+
+
 def get_otc_full_url(host, path):
     """Get otc url based on host and path"""
     return "{0}/otc{1}".format(host, path)
