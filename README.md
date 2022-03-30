@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-03-30
+  - Add nodejs sample to get all futures position via `allPosition` websocket topic
+
 * 2022-03-24
   - Add python and js samples for oss delta orderbook
     - `nodejs -> app -> spot -> ws-oss-delta.js`
