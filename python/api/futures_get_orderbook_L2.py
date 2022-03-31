@@ -24,11 +24,4 @@ def futures_get_orderbook_L2(params):
 
 
 if __name__ == "__main__":
-    print(
-        futures_get_orderbook_L2(
-            {
-                "symbol": "BTCPFC",
-                "depth": 10,
-            }
-        )
-    )
+    print(futures_get_orderbook_L2({"symbol": "BTCPFC", "depth": 10,}))

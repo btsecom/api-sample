@@ -24,11 +24,4 @@ def spot_get_orderbook(params):
 
 
 if __name__ == "__main__":
-    print(
-        spot_get_orderbook(
-            {
-                "symbol": "BTC-USD",
-                "group": 2,
-            }
-        )
-    )
+    print(spot_get_orderbook({"symbol": "BTC-USD", "group": 2,}))

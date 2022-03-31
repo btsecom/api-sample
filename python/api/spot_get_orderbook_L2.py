@@ -24,11 +24,4 @@ def spot_get_orderbook_L2(params):
 
 
 if __name__ == "__main__":
-    print(
-        spot_get_orderbook_L2(
-            {
-                "symbol": "BTC-USD",
-                "depth": 10,
-            }
-        )
-    )
+    print(spot_get_orderbook_L2({"symbol": "BTC-USD", "depth": 10,}))

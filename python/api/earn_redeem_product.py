@@ -35,11 +35,4 @@ def earn_redeem_product(data):
 
 
 if __name__ == "__main__":
-    print(
-        earn_redeem_product(
-            {
-                "orderId": 12537,
-                "amount": 2,
-            }
-        )
-    )
+    print(earn_redeem_product({"orderId": 12537, "amount": 2,}))

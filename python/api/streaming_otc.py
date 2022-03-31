@@ -68,10 +68,7 @@ def _op_topic(ws, op, symbol, quantity, currency, clOrderId=""):
         "op": op,
         "symbol": symbol,
         "clOrderId": clOrderId,
-        "quantity": {
-            "quantity": quantity,
-            "currency": currency,
-        },
+        "quantity": {"quantity": quantity, "currency": currency,},
     }
     ws.send(json.dumps(payload))
 

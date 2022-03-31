@@ -35,11 +35,4 @@ def earn_renew_product(data):
 
 
 if __name__ == "__main__":
-    print(
-        earn_renew_product(
-            {
-                "orderId": 12537,
-                "autoRenew": False,
-            }
-        )
-    )
+    print(earn_renew_product({"orderId": 12537, "autoRenew": False,}))

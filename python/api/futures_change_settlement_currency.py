@@ -37,9 +37,6 @@ def futures_change_settlement_currency(data):
 if __name__ == "__main__":
     print(
         futures_change_settlement_currency(
-            {
-                "symbol": "BTCPFC",
-                "currency": "BTC",
-            }
+            {"symbol": "BTCPFC", "currency": "BTC",}
         )
     )

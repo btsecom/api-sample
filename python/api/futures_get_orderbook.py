@@ -24,11 +24,4 @@ def futures_get_orderbook(params):
 
 
 if __name__ == "__main__":
-    print(
-        futures_get_orderbook(
-            {
-                "symbol": "BTCPFC",
-                "group": 2,
-            }
-        )
-    )
+    print(futures_get_orderbook({"symbol": "BTCPFC", "group": 2,}))
