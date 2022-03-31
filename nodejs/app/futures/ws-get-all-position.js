@@ -29,8 +29,6 @@ client.onopen = () => {
       };
       console.log('sending msg: ' + JSON.stringify(payload));
       client.send(JSON.stringify(payload));
-
-      console.log('\n\nwaiting for order to be transacted...\n\n');
     }
   }
   subscribe();
@@ -42,7 +40,8 @@ client.onclose = () => {
 
 client.onmessage = (e) => {
   if (typeof e.data === 'string') {
-    console.log("Received: '" + e.data + "'");
+    const obj = JSON.parse(e.data);
+    console.log(JSON.stringify(obj, undefined, 2));
   }
 };
 
