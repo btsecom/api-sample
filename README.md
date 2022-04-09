@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-04-09
+  - Add python example to delete multiple orders
+
 * 2022-03-30
   - Add nodejs sample to get all futures position via `allPosition` websocket topic
 
