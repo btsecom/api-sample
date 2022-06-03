@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import collections
 import websocket
 import json
 from utils import get_env_info, get_oss_spot_ws_url
@@ -48,50 +49,43 @@ def on_message(ws, message):
                 return
             DELTA_SEQ_NUM = data["seqNum"]
 
-            # update orderbook with input data
-            delta_asks_remove = dict(
-                (x[0], x[1])
-                for x in data["asks"]
-                if len(x) == 2 and float(x[1]) == 0
-            )
-            delta_asks_upsert = dict(
-                (x[0], x[1])
-                for x in data["asks"]
-                if len(x) == 2 and float(x[1]) != 0
-            )
-            delta_bids_remove = dict(
-                (x[0], x[1])
-                for x in data["bids"]
-                if len(x) == 2 and float(x[1]) == 0
-            )
-            delta_bids_upsert = dict(
-                (x[0], x[1])
-                for x in data["bids"]
-                if len(x) == 2 and float(x[1]) != 0
-            )
+            for ask in data["asks"]:
+                price = float(ask[0])
+                size = float(ask[1])
+                if size == 0:
+                    del ASKS[price]
+                else:
+                    ASKS[price] = size
 
-            for k in delta_asks_remove.keys():
-                ASKS.pop(k, None)
-            for k, v in delta_asks_upsert.items():
-                ASKS[k] = v
+            for bid in data["bids"]:
+                price = float(bid[0])
+                size = float(bid[1])
+                if size == 0:
+                    del BIDS[price]
+                else:
+                    BIDS[price] = size
 
-            for k in delta_bids_remove.keys():
-                BIDS.pop(k, None)
-            for k, v in delta_bids_upsert.items():
-                BIDS[k] = v
+            if len(ASKS.keys()) > 0 and len(BIDS.keys()) > 0:
+                best_ask = sorted(ASKS.keys())[0]
+                best_bid = sorted(BIDS.keys(), reverse=True)[0]
+                print("best ask: " + str(best_ask))
+                print("best bid: " + str(best_bid))
+                if best_ask <= best_bid:
+                    print("ERROR: crossed orderbook, re-subscribe")
+                    _resubscribe(ws)
+                    return
 
-            # validate cross orderbook and re-subscribe if needed
-            sorted_asks = {k: ASKS[k] for k in sorted(ASKS, reverse=True)}
-            sorted_bids = {k: BIDS[k] for k in sorted(BIDS, reverse=True)}
-            if sorted_asks[-1] <= sorted_bids[0]:
-                print("ERROR: cross orderbook, re-subscribe")
-                _resubscribe(ws)
-                return
-
-            # output orderbook
+            # print out orderbook
+            print("obj")
             print(json.dumps(obj, indent=2))
-            print(sorted_asks)
-            print(sorted_bids)
+            print()
+
+            print("asks:")
+            print(collections.OrderedDict(sorted(ASKS.items(), reverse=True)))
+            print()
+            print("bids:")
+            print(collections.OrderedDict(sorted(BIDS.items(), reverse=True)))
+            print()
 
     except Exception as e:
         print(e)
