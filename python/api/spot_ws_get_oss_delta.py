@@ -76,6 +76,7 @@ def on_message(ws, message):
                     return
 
             # print out orderbook
+            """
             print("obj")
             print(json.dumps(obj, indent=2))
             print()
@@ -86,6 +87,27 @@ def on_message(ws, message):
             print("bids:")
             print(collections.OrderedDict(sorted(BIDS.items(), reverse=True)))
             print()
+            """
+
+            asks = collections.OrderedDict(sorted(ASKS.items(), reverse=False))
+            bids = collections.OrderedDict(sorted(BIDS.items(), reverse=True))
+            symbol = obj["topic"]
+            symbol = symbol.replace("update:", "")
+            symbol = symbol.split("_", 1)
+            symbol = symbol[0]
+            orderbook = {
+                "bids": [],
+                "asks": [],
+            }
+            for key, value in bids.items():
+                orderbook["bids"].append([key, value])
+            for key, value in asks.items():
+                orderbook["asks"].append([key, value])
+            orderbook["symbol"] = symbol  # not the CCXT unified symbol
+            orderbook["timestamp"] = data["timestamp"]
+            orderbook["nonce"] = data["seqNum"]
+            print("best ask: ", orderbook["asks"][0][0])
+            print("best bid: ", orderbook["bids"][0][0])
 
     except Exception as e:
         print(e)
