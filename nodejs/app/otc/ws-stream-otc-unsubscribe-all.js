@@ -29,11 +29,11 @@ client.onopen = () => {
       };
 
       // subscribe
-      subscribeTopic('quote', 'BTC-EUR', 1, 'EUR', 'order1');
-      subscribeTopic('quote', 'BTC-EUR', 2, 'EUR', 'order2');
-      subscribeTopic('quote', 'BTC-EUR', 3, 'EUR', 'order3');
-      subscribeTopic('quote', 'BTC-EUR', 4, 'EUR', 'order4');
-      subscribeTopic('quote', 'BTC-EUR', 5, 'EUR', 'order5');
+      subscribeTopic('quote', 'BTC-EUR', 0.5, 'BTC', 'order1');
+      subscribeTopic('quote', 'BTC-EUR', 1, 'BTC', 'order2');
+      subscribeTopic('quote', 'BTC-EUR', 5, 'BTC', 'order3');
+      subscribeTopic('quote', 'BTC-EUR', 10, 'BTC', 'order4');
+      subscribeTopic('quote', 'BTC-EUR', 20, 'BTC', 'order5');
 
       // unsubscribe-all
       client.send(JSON.stringify({ op: 'unsubscribe-quote-all' }));

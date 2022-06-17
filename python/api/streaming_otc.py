@@ -14,7 +14,7 @@ def on_message(ws, message):
     obj = json.loads(message)
     clOrderId = obj.get("clOrderId", None)
     if clOrderId and clOrderId == "order1":
-        _unsubscribe_topic(ws, "BTC-USD", 1, "USD", "order1")
+        _unsubscribe_topic(ws, "BTC-USD", 1, "BTC", "order1")
     if not clOrderId or clOrderId == "order1":
         return
 
@@ -58,9 +58,9 @@ def on_open(ws):
     ws.send(json.dumps(payload))
 
     # subscribe to otc streaming quote
-    _subscribe_topic(ws, "BTC-USD", 1, "USD", "order1")
-    _subscribe_topic(ws, "BTC-USD", 2, "USD", "order2")
-    _subscribe_topic(ws, "BTC-USD", 3, "USD", "order3")
+    _subscribe_topic(ws, "BTC-USD", 0.1, "BTC", "order1")
+    _subscribe_topic(ws, "BTC-USD", 2, "BTC", "order2")
+    _subscribe_topic(ws, "BTC-USD", 10, "BTC", "order3")
 
 
 def _op_topic(ws, op, symbol, quantity, currency, clOrderId=""):
@@ -68,7 +68,10 @@ def _op_topic(ws, op, symbol, quantity, currency, clOrderId=""):
         "op": op,
         "symbol": symbol,
         "clOrderId": clOrderId,
-        "quantity": {"quantity": quantity, "currency": currency,},
+        "quantity": {
+            "quantity": quantity,
+            "currency": currency,
+        },
     }
     ws.send(json.dumps(payload))
 
