@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-06-28
+  - Add examples to query futures trade history
+
 * 2022-04-09
   - Add python example to delete multiple orders
 
