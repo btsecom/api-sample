@@ -111,6 +111,7 @@ client.onmessage = (e) => {
     const payload = JSON.parse(e.data);
     if (payload.data && payload.data.clOrderID === clOrderID) {
       switch (payload.data.status) {
+        // 2: ORDER_INSERTED = Order is inserted successfully
         case 2: {
           console.log('Order is inserted successfully');
           cancelOrder({
@@ -119,14 +120,18 @@ client.onmessage = (e) => {
           }).catch(console.error);
           return;
         };
+        // 4: ORDER_FULLY_TRANSACTED = Order is fully transacted
         case 4: {
           console.log('Order is fully transacted');
           return;
         };
+        // 5: ORDER_PARTIALLY_TRANSACTED = Order is partially transacted
         case 5: {
           console.log('Order is partially transacted');
           return;
         }
+        // 6: ORDER_CANCELLED = Order is cancelled successfully
+        // 15: ORDER_REJECTED = Order is rejected
         case 6:
         case 15: {
           console.log('Order is cancelled successfully');
