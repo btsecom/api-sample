@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-08-19
+  - Add examples to get order status via notification v2 websocket topic
+
 * 2022-06-28
   - Add examples to query futures trade history
 
