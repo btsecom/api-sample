@@ -64,16 +64,21 @@ def on_message(ws, message):
 
     if (payload['data'] and payload['data']['clOrderID'] == clOrderID):
         status = payload['data']['status']
+        # 2: ORDER_INSERTED = Order is inserted successfully
         if status == 2:
             print('Order is inserted successfully')
             spot_cancel_order({
                 "symbol": "BTC-USD",
                 "clOrderID": clOrderID,
             })
+        # 4: ORDER_FULLY_TRANSACTED = Order is fully transacted
         elif status == 4:
             print('Order is fully transacted')
+        # 5: ORDER_PARTIALLY_TRANSACTED = Order is partially transacted
         elif status == 5:
             print('Order is partially transacted')
+        # 6: ORDER_CANCELLED = Order is cancelled successfully
+        # 15: ORDER_REJECTED = Order is rejected
         elif status == 6 or status == 15:
             print('Order is cancelled successfully')
 
