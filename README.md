@@ -90,7 +90,7 @@ Sample connectors for connecting to the BTSE API.
 |earn_renew_product.py | earn/renew-investment.js |
 |futures_cancel_order.py | future/cancel-order.js |
 |futures_change_settlement_currency.py | future/change-settlement-currency.js |
-| | future/charting-data.js |
+|futures_charting_data.py | future/charting-data.js |
 |futures_place_limit_order.py | future/create-limit-order.js |
 |futures_place_market_order.py | future/create-market-order.js |
 | | future/create-reduce-only-order.js |
