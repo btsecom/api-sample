@@ -17,5 +17,8 @@ download the speicifc versino for each package for poetry, sudo, dos2unix
 1. convert all .py files to unix by ```find . -type f -print0 | xargs -0 dos2unix```
 2. ```poetry run /app/filename```
 
+every files you touch you need to open the permission using chmod +x `filename`
+
 POSTMAN
 address prefix:https://www.btse.dev/api/spot/api/
+

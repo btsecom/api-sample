@@ -110,4 +110,4 @@ Sample connectors for connecting to the BTSE API.
 |futures_ws_get_oss_delta.py | future/ws-get-orderbook-delta.js |
 | | future/ws-notification-v1.js |
 |futures_ws_get_orderbook.py | future/ws-notification-v2.js |
-| | future/ |
+|futures_amend_order.py | future/ |
