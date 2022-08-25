@@ -93,7 +93,7 @@ Sample connectors for connecting to the BTSE API.
 |futures_charting_data.py | future/charting-data.js |
 |futures_place_limit_order.py | future/create-limit-order.js |
 |futures_place_market_order.py | future/create-market-order.js |
-| | future/create-reduce-only-order.js |
+|futures_place_reduce_only_order.py | future/create-reduce-only-order.js |
 | | future/create-trailing-stop-order.js |
 |futures_get_market_summary.py | future/market-summary.js |
 |futures_get_orderbook_L2.py | future/orderbook-L2.js |
