@@ -1,26 +1,27 @@
 #!/usr/bin/env python3
 
+import json
 import requests
 from requests.exceptions import HTTPError
 from utils import (
     get_env_info,
     get_futures_api_version,
-    get_spot_full_url,
+    get_futures_full_url,
     gen_headers,
 )
 
 
-def earn_get_ohlcv(data):
-    url = "/api/{0}/ohlcv".format(get_futures_api_version())
+def funct(data):
+    url = "/api/{0}/order/peg".format(get_futures_api_version())
     env = get_env_info()
-    headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    params = data
+    headers = gen_headers(
+        env["API_KEY"], env["API_SECRET_KEY"], url, json.dumps(data)
+    )
     ret = {}
     try:
-        # page_number is 1-based
-        resp = requests.get(
-            get_spot_full_url(env["API_HOST"], url),
-            params=params,
+        resp = requests.post(
+            get_futures_full_url(env["API_HOST"], url),
+            json=data,
             headers=headers,
         )
         resp.raise_for_status()
@@ -35,7 +36,9 @@ def earn_get_ohlcv(data):
 
 if __name__ == "__main__":
     data = {
-        "symbol": "BTCPFC",
-        "resolution": 15
-        }
-    print(earn_get_ohlcv(data))
+        "size": 7,
+        "price": 23000,
+        "side": "BUY",
+        "symbol": "BTCPFC"
+    }
+    print(funct(data))

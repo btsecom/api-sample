@@ -80,34 +80,78 @@ Sample connectors for connecting to the BTSE API.
 
 
 # Files Comparison
+## Earn
+### Investment Endpoints
 |Document Name |Python | Node.js | 
-| :---   | :---   | :---   | 
+| :--------   | :--------   | :--------  | 
 |Deposit Investment |earn_buy_product.py | earn/deposit-investment.js |
 |Query Investment History |earn_get_history.py | earn/investment-history.js |
 |Query Investment Orders |earn_get_orders.py | earn/investment-orders.js |
 |Query Investment Products |earn_get_products.py | earn/query-investment-products.js |
 |Redeem Investment |earn_redeem_product.py | earn/investment-redeem.js |
-|Renew Investment |earn_renew_product.py | earn/renew-investment.js |
-| |futures_cancel_order.py | future/cancel-order.js |
-| |futures_change_settlement_currency.py | future/change-settlement-currency.| js |
+|Renew Investment |earn_renew_product.py | earn/renew-investment.js |'
+<br>
+
+## Futures
+### Public Endpoints
+|Document Name |Python | Node.js | 
+| :--------   | :--------   | :--------  | 
+|Market Summary |futures_get_market_summary.py | future/market-summary.js |
 |Charting Data |futures_charting_data.py | future/charting-data.js |
-| |futures_place_limit_order.py | future/create-limit-order.js |
+|Query Market price | futures_query_market_price.py | future/query-market-price.js |
+|Orderbook (By grouping) |futures_get_orderbook.py | future/orderbook-grouping.js |
+|Orderbook |futures_get_orderbook_L2.py | future/orderbook-L2.js |
+|Query Trades Fills |futures_get_trades.py | future/query-trade-fills.js |
+
+### Trade Endpoints
+|Document Name |Python | Node.js | 
+| :--------   | :--------   | :--------  | 
+|Create new order |futures_place_limit_order.py | future/create-limit-order.js |
+|Create new algo order|futures_create_new_algo_order.py||
+|Amend Order |futures_amend_order.py ||
+|Cancel Order |futures_cancel_order.py | future/cancel-order.js |
+|Dead man's switch (Cancel all after)|futures_cancel_all_after.py||
+|Query Open Orders |futures_get_open_orders.py | future/query-open-orders.js |
+|Query Trades Fills|futures_query_trades_fills.py|future/query-trade-history.js|
+|Query Position|futures_query_position.py|query-positions.js|
+|Close Position|futures_close_position.py||
+|Set Risk Limits|futures_set_risk_limits.py||
+|Set Leverage|futures_set_leverage.py||
+|Change contract settlement currency|futures_change_settlement_currency.py | future/change-settlement-currency.| js |
+|Query Account Fees|futures_query_account_fees.py||
+
+### Wallet Endpoints
+|Document Name |Python | Node.js | 
+| :--------   | :--------   | :--------  | 
+|Query Wallet Balance|futures_query_wallet_balance.py|future/query-wallet-balance.js|
+|Query Wallet History | futures_query_wallet_history.py | future/query-wallet-history.js|
+|Query Wallet Margin|futures_query_wallet_margin.py|future/query-wallet-margin.js|
+|Transfer funds between Futures wallet|||
+
+### Websocket Streams
+|Document Name |Python | Node.js | 
+| :--------   | :--------   | :--------  | 
+|Subscription|||
+|Orderbook Snapshot (By depth)|||
+|Orderbook Snapshot (By depth)|||
+|Orderbook Incremental Updates|||
+|Public Trade Fills|||
+|Authentication|||
+|Notifications|||
+|User Trade Fills|||
+|All Position|||
+
+<br>
+
+
+
+
 | |futures_place_market_order.py | future/create-market-order.js |
 | |futures_place_reduce_only_order.py | future/create-reduce-only-order.js |
 | | | future/create-trailing-stop-order.js |
-|Market Summary |futures_get_market_summary.py | future/market-summary.js |
-| |futures_get_orderbook_L2.py | future/orderbook-L2.js |
-| |futures_get_orderbook.py | future/orderbook-grouping.js |
-|Query Market price | futures_query_market_price.py | future/query-market-price.js |
-| |futures_get_open_orders.py | future/query-open-orders.js |
 | | | future/query-positions.js |
-| |futures_get_trades.py | future/query-trade-fills.js |
-| | | future/query-trade-history.js |
-| | | future/query-wallet-balance.js |
-| | | future/query-wallet-history.js |
-| | | future/query-wallet-margin.js |
+| | |  |
 | |futures_ws_get_all_position.py | future/ws-get-all-position.js |
 | |futures_ws_get_oss_delta.py | future/ws-get-orderbook-delta.js |
 | | | future/ws-notification-v1.js |
 | |futures_ws_get_orderbook.py | future/ws-notification-v2.js |
-| |futures_amend_order.py | future/ |

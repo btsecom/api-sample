@@ -5,21 +5,19 @@ from requests.exceptions import HTTPError
 from utils import (
     get_env_info,
     get_futures_api_version,
-    get_spot_full_url,
+    get_futures_full_url,
     gen_headers,
 )
 
 
-def earn_get_ohlcv(data):
-    url = "/api/{0}/ohlcv".format(get_futures_api_version())
+def funct(params):
+    url = "/api/{0}/user/positions".format(get_futures_api_version())
     env = get_env_info()
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    params = data
     ret = {}
     try:
-        # page_number is 1-based
         resp = requests.get(
-            get_spot_full_url(env["API_HOST"], url),
+            get_futures_full_url(env["API_HOST"], url),
             params=params,
             headers=headers,
         )
@@ -34,8 +32,4 @@ def earn_get_ohlcv(data):
 
 
 if __name__ == "__main__":
-    data = {
-        "symbol": "BTCPFC",
-        "resolution": 15
-        }
-    print(earn_get_ohlcv(data))
+    print(funct({}))
