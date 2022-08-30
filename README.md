@@ -80,34 +80,34 @@ Sample connectors for connecting to the BTSE API.
 
 
 # Files Comparison
-|Python | Node.js | 
-| :---   | :---   | 
-|earn_buy_product.py | earn/deposit-investment.js |
-|earn_get_history.py | earn/investment-history.js |
-|earn_get_orders.py | earn/investment-orders.js |
-|earn_get_products.py | earn/query-investment-products.js |
-|earn_redeem_product.py | earn/investment-redeem.js |
-|earn_renew_product.py | earn/renew-investment.js |
-|futures_cancel_order.py | future/cancel-order.js |
-|futures_change_settlement_currency.py | future/change-settlement-currency.js |
-|futures_charting_data.py | future/charting-data.js |
-|futures_place_limit_order.py | future/create-limit-order.js |
-|futures_place_market_order.py | future/create-market-order.js |
-|futures_place_reduce_only_order.py | future/create-reduce-only-order.js |
-| | future/create-trailing-stop-order.js |
-|futures_get_market_summary.py | future/market-summary.js |
-|futures_get_orderbook_L2.py | future/orderbook-L2.js |
-|futures_get_orderbook.py | future/orderbook-grouping.js |
-| | future/query-market-price.js |
-|futures_get_open_orders.py | future/query-open-orders.js |
-| | future/query-positions.js |
-|futures_get_trades.py | future/query-trade-fills.js |
-| | future/query-trade-history.js |
-| | future/query-wallet-balance.js |
-| | future/query-wallet-history.js |
-| | future/query-wallet-margin.js |
-|futures_ws_get_all_position.py | future/ws-get-all-position.js |
-|futures_ws_get_oss_delta.py | future/ws-get-orderbook-delta.js |
-| | future/ws-notification-v1.js |
-|futures_ws_get_orderbook.py | future/ws-notification-v2.js |
-|futures_amend_order.py | future/ |
+|Document Name |Python | Node.js | 
+| :---   | :---   | :---   | 
+|Deposit Investment |earn_buy_product.py | earn/deposit-investment.js |
+|Query Investment History |earn_get_history.py | earn/investment-history.js |
+|Query Investment Orders |earn_get_orders.py | earn/investment-orders.js |
+|Query Investment Products |earn_get_products.py | earn/query-investment-products.js |
+|Redeem Investment |earn_redeem_product.py | earn/investment-redeem.js |
+|Renew Investment |earn_renew_product.py | earn/renew-investment.js |
+| |futures_cancel_order.py | future/cancel-order.js |
+| |futures_change_settlement_currency.py | future/change-settlement-currency.| js |
+|Charting Data |futures_charting_data.py | future/charting-data.js |
+| |futures_place_limit_order.py | future/create-limit-order.js |
+| |futures_place_market_order.py | future/create-market-order.js |
+| |futures_place_reduce_only_order.py | future/create-reduce-only-order.js |
+| | | future/create-trailing-stop-order.js |
+|Market Summary |futures_get_market_summary.py | future/market-summary.js |
+| |futures_get_orderbook_L2.py | future/orderbook-L2.js |
+| |futures_get_orderbook.py | future/orderbook-grouping.js |
+|Query Market price | futures_query_market_price.py | future/query-market-price.js |
+| |futures_get_open_orders.py | future/query-open-orders.js |
+| | | future/query-positions.js |
+| |futures_get_trades.py | future/query-trade-fills.js |
+| | | future/query-trade-history.js |
+| | | future/query-wallet-balance.js |
+| | | future/query-wallet-history.js |
+| | | future/query-wallet-margin.js |
+| |futures_ws_get_all_position.py | future/ws-get-all-position.js |
+| |futures_ws_get_oss_delta.py | future/ws-get-orderbook-delta.js |
+| | | future/ws-notification-v1.js |
+| |futures_ws_get_orderbook.py | future/ws-notification-v2.js |
+| |futures_amend_order.py | future/ |
