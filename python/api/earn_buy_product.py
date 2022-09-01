@@ -38,7 +38,7 @@ if __name__ == "__main__":
     print(
         earn_buy_product(
             {
-                "productId": "STAKEAXS00001",
+                "productId": "LENDWGBP000001",
                 "amount": 1,
                 "renew": False,
                 "rate": 77.224,
