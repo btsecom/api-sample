@@ -82,76 +82,61 @@ Sample connectors for connecting to the BTSE API.
 # Files Comparison
 ## Earn
 ### Investment Endpoints
-|Document Name |Python | Node.js | 
-| :--------   | :--------   | :--------  | 
-|Deposit Investment |earn_buy_product.py | earn/deposit-investment.js |
-|Query Investment History |earn_get_history.py | earn/investment-history.js |
-|Query Investment Orders |earn_get_orders.py | earn/investment-orders.js |
-|Query Investment Products |earn_get_products.py | earn/query-investment-products.js |
-|Redeem Investment |earn_redeem_product.py | earn/investment-redeem.js |
-|Renew Investment |earn_renew_product.py | earn/renew-investment.js |'
+|Document Name |Python |
+| :--------   | :--------   |
+|Deposit Investment |earn_buy_product.py |
+|Query Investment History |earn_get_history.py |
+|Query Investment Orders |earn_get_orders.py |
+|Query Investment Products |earn_get_products.py |
+|Redeem Investment |earn_redeem_product.py |
+|Renew Investment |earn_renew_product.py |
 <br>
 
 ## Futures
 ### Public Endpoints
-|Document Name |Python | Node.js | 
-| :--------   | :--------   | :--------  | 
-|Market Summary |futures_get_market_summary.py | future/market-summary.js |
-|Charting Data |futures_charting_data.py | future/charting-data.js |
-|Query Market price | futures_query_market_price.py | future/query-market-price.js |
-|Orderbook (By grouping) |futures_get_orderbook.py | future/orderbook-grouping.js |
-|Orderbook |futures_get_orderbook_L2.py | future/orderbook-L2.js |
-|Query Trades Fills |futures_get_trades.py | future/query-trade-fills.js |
+|Document Name |Python | 
+| :--------   | :--------   | 
+|Market Summary |futures_get_market_summary.py | 
+|Charting Data |futures_charting_data.py | 
+|Query Market price | futures_query_market_price.py | 
+|Orderbook (By grouping) |futures_get_orderbook.py | 
+|Orderbook |futures_get_orderbook_L2.py | 
+|Query Trades Fills |futures_get_trades.py | 
 
 ### Trade Endpoints
-|Document Name |Python | Node.js | 
-| :--------   | :--------   | :--------  | 
-|Create new order |futures_place_limit_order.py | future/create-limit-order.js |
-|Create new algo order|futures_create_new_algo_order.py||
-|Amend Order |futures_amend_order.py ||
-|Cancel Order |futures_cancel_order.py | future/cancel-order.js |
-|Dead man's switch (Cancel all after)|futures_cancel_all_after.py||
-|Query Open Orders |futures_get_open_orders.py | future/query-open-orders.js |
-|Query Trades Fills|futures_query_trades_fills.py|future/query-trade-history.js|
+|Document Name |Python | 
+| :--------   | :--------   | 
+|Create new order |futures_place_limit_order.py | 
+|Create new algo order|futures_create_new_algo_order.py|
+|Amend Order |futures_amend_order.py |
+|Cancel Order |futures_cancel_order.py | 
+|Dead man's switch (Cancel all after)|futures_cancel_all_after.py|
+|Query Open Orders |futures_get_open_orders.py |
+|Query Trades Fills|futures_query_trades_fills.py|
 |Query Position|futures_query_position.py|query-positions.js|
-|Close Position|futures_close_position.py||
-|Set Risk Limits|futures_set_risk_limits.py||
-|Set Leverage|futures_set_leverage.py||
-|Change contract settlement currency|futures_change_settlement_currency.py | future/change-settlement-currency.| js |
-|Query Account Fees|futures_query_account_fees.py||
+|Close Position|futures_close_position.py|
+|Set Risk Limits|futures_set_risk_limits.py|
+|Set Leverage|futures_set_leverage.py|
+|Change contract settlement currency|futures_change_settlement_currency.py | 
+|Query Account Fees|futures_query_account_fees.py|
 
 ### Wallet Endpoints
-|Document Name |Python | Node.js | 
-| :--------   | :--------   | :--------  | 
-|Query Wallet Balance|futures_query_wallet_balance.py|future/query-wallet-balance.js|
-|Query Wallet History | futures_query_wallet_history.py | future/query-wallet-history.js|
-|Query Wallet Margin|futures_query_wallet_margin.py|future/query-wallet-margin.js|
-|Transfer funds between Futures wallet|||
+|Document Name |Python | 
+| :--------   | :--------   | 
+|Query Wallet Balance|futures_query_wallet_balance.py|
+|Query Wallet History | futures_query_wallet_history.py | 
+|Query Wallet Margin|futures_query_wallet_margin.py|
+|Transfer funds between Futures wallet|futures_transfer_funds_between_futures_wallet.py|
 
 ### Websocket Streams
-|Document Name |Python | Node.js | 
-| :--------   | :--------   | :--------  | 
-|Subscription|||
-|Orderbook Snapshot (By depth)|||
-|Orderbook Snapshot (By depth)|||
-|Orderbook Incremental Updates|||
-|Public Trade Fills|||
-|Authentication|||
-|Notifications|||
-|User Trade Fills|||
-|All Position|||
-
-<br>
-
-
-
-
-| |futures_place_market_order.py | future/create-market-order.js |
-| |futures_place_reduce_only_order.py | future/create-reduce-only-order.js |
-| | | future/create-trailing-stop-order.js |
-| | | future/query-positions.js |
-| | |  |
-| |futures_ws_get_all_position.py | future/ws-get-all-position.js |
-| |futures_ws_get_oss_delta.py | future/ws-get-orderbook-delta.js |
-| | | future/ws-notification-v1.js |
-| |futures_ws_get_orderbook.py | future/ws-notification-v2.js |
+|Document Name |Python |
+| :--------   | :--------   |
+|Subscription|futures_ws_subscription.py |
+|Orderbook Snapshot (By grouping)|futures_ws_get_orderbook_group.py |
+|Orderbook Snapshot (By depth)|futures_ws_get_orderbook_depth.py|
+|Orderbook Incremental Updates|futures_ws_get_oss_delta.py|
+|Public Trade Fills|futures_ws_public_trade_fills.py|
+|Authentication|futures_ws_authentication.py|
+|Notifications|futures_ws_notifcations.py|
+|User Trade Fills|futures_ws_user_trade_fillls.py|
+|All Position|futures_ws_get_all_position.py|
