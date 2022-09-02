@@ -155,3 +155,15 @@ Sample connectors for connecting to the BTSE API.
 | :--------   | :--------   |
 |Authentication|otc_ws_authentication.py|
 |Quote Stream|otc_ws_quote_stream.py|
+
+## Streaming
+### Workflow
+|Document Name |Python |
+| :--------   | :--------   |
+|Streaming OTC|streaming_otc.py|
+
+### Websocket Streams
+|Document Name |Python |
+| :--------   | :--------   |
+|Authentication|otc_ws_authentication.py|
+|Quote Stream|otc_ws_quote_stream.py|
