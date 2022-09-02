@@ -140,3 +140,12 @@ Sample connectors for connecting to the BTSE API.
 |Notifications|futures_ws_notifcations.py|
 |User Trade Fills|futures_ws_user_trade_fillls.py|
 |All Position|futures_ws_get_all_position.py|
+
+## OTC
+### OTC Endpoints
+|Document Name |Python |
+| :--------   | :--------   |
+|Market Summary|otc_get_market_summary.py|
+|Request for Quote|otc_get_quote.py|
+|Accept Quote|otc_accept_quote.py|
+|Query Order||

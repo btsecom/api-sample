@@ -2,7 +2,7 @@
 
 import websocket
 import json
-from utils import get_env_info, get_futures_ws_url
+from utils import get_env_info, get_otc_ws_url, gen_headers
 
 order_counts = {}
 
@@ -18,22 +18,25 @@ def on_error(ws, error):
 def on_close(ws, close_status_code, close_msg):
     print("### socket closed ###")
 
-def login(ws,your_token):
-    payload = {
-        "op":"token",
-        "args":[your_token]
-    }
+def on_open(ws):
+    # auth is mandatory in order to get your own positions
+
+    url = "/ws/otc"
+    headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
+    print(headers)
+
+    #enter your token
+    your_token = ""  
+    payload = {"op":"token","args":[your_token]}
     ws.send(json.dumps(payload))
 
-def on_open(ws):
-    your_token = "" #enter your token here
-    login(ws, your_token)
-
     payload = {
-        "op": "subscribe",
+        "op": "authKeyExpires",
         "args": [
-            "notificationApiV2"
-        ]
+            headers["btse-api"],
+            headers["btse-nonce"],
+            headers["btse-sign"],
+        ],
     }
     ws.send(json.dumps(payload))
 
@@ -42,7 +45,7 @@ if __name__ == "__main__":
     # websocket.enableTrace(True)
     env = get_env_info()
     ws = websocket.WebSocketApp(
-        get_futures_ws_url(env["WS_HOST"]),
+        get_otc_ws_url(env["WS_HOST"]),
         on_open=on_open,
         on_message=on_message,
         on_error=on_error,
