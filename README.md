@@ -149,3 +149,9 @@ Sample connectors for connecting to the BTSE API.
 |Request for Quote|otc_get_quote.py|
 |Accept Quote|otc_accept_quote.py|
 |Query Order||
+
+### Websocket Streams
+|Document Name |Python |
+| :--------   | :--------   |
+|Authentication|otc_ws_authentication.py|
+|Quote Stream|otc_ws_quote_stream.py|
