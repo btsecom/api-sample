@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-
-import json
+# todo
 import requests
 from requests.exceptions import HTTPError
+import json
 from utils import (
     get_env_info,
     get_spot_api_version,
@@ -11,16 +11,16 @@ from utils import (
 )
 
 
-def spot_place_market_order(data):
-    url = "/api/{0}/order".format(get_spot_api_version())
+def spot_post_invest_renew(data):
+    url = "/api/{0}/invest/renew".format(get_spot_api_version())
     env = get_env_info()
-    headers = gen_headers(
-        env["API_KEY"], env["API_SECRET_KEY"], url, json.dumps(data)
-    )
+    headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url, json.dumps(data))
     ret = {}
     try:
         resp = requests.post(
-            get_spot_full_url(env["API_HOST"], url), json=data, headers=headers
+            get_spot_full_url(env["API_HOST"], url),
+            json=data,
+            headers=headers,
         )
         resp.raise_for_status()
     except HTTPError as http_err:
@@ -34,14 +34,10 @@ def spot_place_market_order(data):
 
 if __name__ == "__main__":
     print(
-        spot_place_market_order(
+        spot_post_invest_renew(
             {
-                "clOrderID": "test-order-placement",
-                "size": 0.0005,
-                "side": "BUY",
-                "symbol": "BTC-USD",
-                "txType": "LIMIT",
-                "type": "MARKET",
+                "orderId": 1,
+                "autoRenew": False
             }
         )
     )
