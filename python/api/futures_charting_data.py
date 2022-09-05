@@ -5,7 +5,7 @@ from requests.exceptions import HTTPError
 from utils import (
     get_env_info,
     get_futures_api_version,
-    get_spot_full_url,
+    get_futures_full_url,
     gen_headers,
 )
 
@@ -19,10 +19,11 @@ def earn_get_ohlcv(data):
     try:
         # page_number is 1-based
         resp = requests.get(
-            get_spot_full_url(env["API_HOST"], url),
+            get_futures_full_url(env["API_HOST"], url),
             params=params,
             headers=headers,
         )
+        print(get_futures_full_url(env["API_HOST"], url))
         resp.raise_for_status()
     except HTTPError as http_err:
         print("HTTP error occurred: {0}".format(http_err))
@@ -36,6 +37,5 @@ def earn_get_ohlcv(data):
 if __name__ == "__main__":
     data = {
         "symbol": "BTCPFC",
-        "resolution": 15
         }
     print(earn_get_ohlcv(data))
