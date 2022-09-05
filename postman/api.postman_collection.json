@@ -1,0 +1,2298 @@
+{
+	"info": {
+		"_postman_id": "2044974c-4144-4928-89fd-24838c4a2d05",
+		"name": "api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23057301"
+	},
+	"item": [
+		{
+			"name": "Spot",
+			"item": [
+				{
+					"name": "query-market-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/market_summary",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"market_summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "charting-data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/ohlcv?symbol=BTC-USD&resolution=30",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"ohlcv"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USD",
+									"description": "market symbol"
+								},
+								{
+									"key": "resolution",
+									"value": "30",
+									"description": "supported resolutions are: \n1: 1min\n5: 5mins\n15: 15mins\n30: 30mins\n60: 60mins\n360: 6hours\n1440: 1day"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-market-price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/price",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderbook-grouping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/orderbook?symbol=BTC-USDT&group=1&limit_bids=5&limit_asks=10",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"orderbook"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USDT"
+								},
+								{
+									"key": "group",
+									"value": "1"
+								},
+								{
+									"key": "limit_bids",
+									"value": "5"
+								},
+								{
+									"key": "limit_asks",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderbook-L2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/orderbook/L2?symbol=BTC-USD&depth=5",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"orderbook",
+								"L2"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USD"
+								},
+								{
+									"key": "depth",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-trade-fills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/trades?symbol=BTC-USD",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"trades"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-serve-time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/time",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"time"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-peg-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTC-USD\",\n  \"size\": 1,\n  \"price\": 10000,\n  \"side\": \"BUY\",\n  \"type\": \"LIMIT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/order",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "amend-order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTC-USD\",\n  \"orderID\": \"574f733c-e3c6-47f4-b51c-468d619eb505\",\n  \"type\": \"PRICE\",\n  \"value\": 10101\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/order",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel-order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/order?symbol=BTC-USD",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"order"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel-all-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timeout\": 1662024952769\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/order/cancelAllAfter",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"order",
+								"cancelAllAfter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-open-orders",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/user/open_orders?symbol=BTC-USD",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"open_orders"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-trade-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/user/trade_history?symbol=BTC-USD",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"trade_history"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC-USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-account-fees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{staging-url}}/spot/api/v3.2/user/fees",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"fees"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const path = pm.request.url.getPath().substring(pm.request.url.getPath().indexOf('/api'));",
+							"const secret = pm.environment.get('api-secret');",
+							"const nonce = new Date().getTime().toString();",
+							"const body = pm.request.method == 'GET' ? '' : pm.request.body.toString();",
+							"",
+							"console.log(body)",
+							"console.log(path + nonce + body)",
+							"const encoded = CryptoJS.HmacSHA384(path + nonce + body, secret);",
+							"",
+							"// pm.variables.set('api-nonce', nonce);",
+							"// pm.variables.set('api-sign', encoded.toString());",
+							"",
+							"pm.environment.set('api-nonce', nonce);",
+							"pm.environment.set('api-sign', encoded.toString());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Futures",
+			"item": [
+				{
+					"name": "query-market-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/futures/api/v2.1/market_summary",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"market_summary"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "charting-data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/futures/api/v2.1/ohlcv?symbol=BTCPFC&resolution=15",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"ohlcv"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC",
+									"description": "market symbol"
+								},
+								{
+									"key": "resolution",
+									"value": "15",
+									"description": "supported resolutions are: \n1: 1min\n5: 5mins\n15: 15mins\n30: 30mins\n60: 60mins\n360: 6hours\n1440: 1day"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-market-price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/futures/api/v2.1/price",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderbook-grouping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/futures/api/v2.1/orderbook?symbol=BTCPFC",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"orderbook"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderbook-L2 Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/futures/api/v2.1/orderbook/L2?symbol=BTCPFC&depth=5",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"orderbook",
+								"L2"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								},
+								{
+									"key": "depth",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-trade-fills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{staging-url}}/futures/api/v2.1/trades?symbol=BTCPFC&count=10",
+							"host": [
+								"{{staging-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"trades"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								},
+								{
+									"key": "count",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-order",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"size\": 1,\n  \"price\": 11000,\n  \"side\": \"BUY\",\n  \"type\": \"LIMIT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/order",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-algo-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"price\": 11500,\n  \"size\": 1,\n  \"side\": \"BUY\",\n  \"stealth\": 10,\n  \"deviation\": -10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/order/peg",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"order",
+								"peg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "amend-order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"orderID\": \"61d3ec71-384c-494d-94fc-397a1c169300\",\n  \"type\": \"PRICE\",\n  \"value\": 13000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/order",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel-order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/order?symbol=BTCPFC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"order"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel-all-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timeout\": 60000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/order/cancelAllAfter",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"order",
+								"cancelAllAfter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-open-orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/open_orders?symbol=BTCPFC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"open_orders"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-trade-fills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/trade_history?symbol=BTCPFC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"trade_history"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-positions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/positions?symbol=BTCPFC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"positions"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "close-position",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 0,\n  \"symbol\": \"BTCPFC\",\n  \"type\": \"MARKET\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/order/close_position",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"order",
+								"close_position"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set-risk-limits",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"riskLimit\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/risk_limit",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"risk_limit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set-leverage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"leverage\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/leverage",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"leverage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-settlement-currency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"currency\": \"BTC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/settle_in",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"settle_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-account-fees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/fees",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"fees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-wallet-balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/wallet",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-wallet-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/margin?symbol=BTCPFC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"margin"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-wallet-margin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						]
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const path = pm.request.url.getPath().substring(pm.request.url.getPath().indexOf('/api'));",
+							"const secret = pm.environment.get('api-secret');",
+							"const nonce = new Date().getTime().toString();",
+							"const body = pm.request.method == 'GET' ? '' : pm.request.body.toString();",
+							"",
+							"console.log(body)",
+							"console.log(path + nonce + body)",
+							"const encoded = CryptoJS.HmacSHA384(path + nonce + body, secret);",
+							"",
+							"// pm.variables.set('api-nonce', nonce);",
+							"// pm.variables.set('api-sign', encoded.toString());",
+							"",
+							"pm.environment.set('api-nonce', nonce);",
+							"pm.environment.set('api-sign', encoded.toString());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "OTC",
+			"item": [
+				{
+					"name": "market-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/otc/api/v1/getMarket",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"otc",
+								"api",
+								"v1",
+								"getMarket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request-for-quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"baseCurrency\": \"BTC\",\n  \"orderCurrency\": \"USD\",\n  \"orderSizeInBaseCurrency\": 1,\n  \"orderAmountInOrderCurrency\": 0,\n  \"clientOrderId\": null,\n  \"side\": \"buy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/otc/api/v1/quote",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"otc",
+								"api",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept-quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/otc/api/v1/accept/752191c9-ee6f-46d5-9e68-0c268df9b5e1",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"otc",
+								"api",
+								"v1",
+								"accept",
+								"752191c9-ee6f-46d5-9e68-0c268df9b5e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject-quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/otc/api/v1/reject/5c5483d7-3f92-4910-ac80-f5d32c5ed62d",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"otc",
+								"api",
+								"v1",
+								"reject",
+								"5c5483d7-3f92-4910-ac80-f5d32c5ed62d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/otc/api/v1/queryOrder/5c5483d7-3f92-4910-ac80-f5d32c5ed62d",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"otc",
+								"api",
+								"v1",
+								"queryOrder",
+								"5c5483d7-3f92-4910-ac80-f5d32c5ed62d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const path = pm.request.url.getPath().substring(pm.request.url.getPath().indexOf('/api'));",
+							"const secret = pm.environment.get('api-secret');",
+							"const nonce = new Date().getTime().toString();",
+							"const body = pm.request.method == 'GET' ? '' : pm.request.body.toString();",
+							"",
+							"console.log(body)",
+							"console.log(path + nonce + body)",
+							"const encoded = CryptoJS.HmacSHA384(path + nonce + body, secret);",
+							"",
+							"// pm.variables.set('api-nonce', nonce);",
+							"// pm.variables.set('api-sign', encoded.toString());",
+							"",
+							"pm.environment.set('api-nonce', nonce);",
+							"pm.environment.set('api-sign', encoded.toString());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "query-available-currency-network",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/availableCurrencyNetworks?currency=BTC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"availableCurrencyNetworks"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "BTC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-exchange-rate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/exchangeRate?srcCurrency=BTC&targetCurrency=USD",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"exchangeRate"
+							],
+							"query": [
+								{
+									"key": "srcCurrency",
+									"value": "BTC"
+								},
+								{
+									"key": "targetCurrency",
+									"value": "USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-wallet-balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-wallet-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet_history",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet_history"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "USD",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-wallet-address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currency\": \"BTC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/address",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-wallet-address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/address?currency=BTC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet",
+								"address"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "BTC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdraw-funds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currency\": \"BTC-Bitcoin\",\n  \"address\": \"\",\n  \"tag\": \"\",\n  \"amount\": \"0.001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/withdraw",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-available-currencies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/availableCurrencies?action=SEND",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"availableCurrencies"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "SEND"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convert-wallet-assets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": \"1\",\n  \"fromAsset\": \"BTC\",\n  \"toAsset\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/convert",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transfer-funds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": \"1.0\",\n  \"asset\": \"USD\",\n  \"toUser\": \"jamesbond\",\n  \"toUserMail\": \"james.bond@nogle.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/transfer",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"user",
+								"wallet",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const path = pm.request.url.getPath().substring(pm.request.url.getPath().indexOf('/api'));",
+							"const secret = pm.environment.get('api-secret');",
+							"const nonce = new Date().getTime().toString();",
+							"const body = pm.request.method == 'GET' ? '' : pm.request.body.toString();",
+							"",
+							"console.log(body)",
+							"console.log(path + nonce + body)",
+							"const encoded = CryptoJS.HmacSHA384(path + nonce + body, secret);",
+							"",
+							"// pm.variables.set('api-nonce', nonce);",
+							"// pm.variables.set('api-sign', encoded.toString());",
+							"",
+							"pm.environment.set('api-nonce', nonce);",
+							"pm.environment.set('api-sign', encoded.toString());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Streaming",
+			"item": []
+		}
+	]
+}
