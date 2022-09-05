@@ -181,5 +181,5 @@ Sample connectors for connecting to the BTSE API.
 |Query Wallet Balance|queryWalletBalance.py|
 |Query Wallet History|WalletqueryWalletHistory.py|
 |Query available currency list for wallet action|queryAvailableCurrency.py|
-|Convert funds||
-|Transfer funds||
+|Convert funds|WalletConvertFunds.py|
+|Transfer funds|WalletTransferFunds.py|
