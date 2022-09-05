@@ -1473,7 +1473,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/margin?symbol=BTCPFC",
+							"raw": "{{dev-url}}/futures/api/v2.1/user/wallet_history",
 							"host": [
 								"{{dev-url}}"
 							],
@@ -1482,13 +1482,7 @@
 								"api",
 								"v2.1",
 								"user",
-								"margin"
-							],
-							"query": [
-								{
-									"key": "symbol",
-									"value": "BTCPFC"
-								}
+								"wallet_history"
 							]
 						}
 					},
@@ -1519,7 +1513,80 @@
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
-						]
+						],
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/user/margin?symbol=BTCPFC",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"user",
+								"margin"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTCPFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transfer-funds",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"walletSrc\": \"string\",\n  \"walletSrcType\": \"SPOT\",\n  \"walletDest\": \"string\",\n  \"walletDestType\": \"CROSS\",\n  \"apiWallets\": [\n    {\n      \"currency\": \"USD\",\n      \"allBalance\": true\n    },\n    {\n      \"currency\": \"BTC\",\n      \"allBalance\": true\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/futures/api/v2.1/wallet/transfer",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"futures",
+								"api",
+								"v2.1",
+								"wallet",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				}
@@ -1667,7 +1734,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/accept/752191c9-ee6f-46d5-9e68-0c268df9b5e1",
+							"raw": "{{dev-url}}/otc/api/v1/accept/752191c9-ee6f-46d5-9e68-0c268df9b5e11",
 							"host": [
 								"{{dev-url}}"
 							],
@@ -1676,7 +1743,7 @@
 								"api",
 								"v1",
 								"accept",
-								"752191c9-ee6f-46d5-9e68-0c268df9b5e1"
+								"752191c9-ee6f-46d5-9e68-0c268df9b5e11"
 							]
 						}
 					},
@@ -1709,7 +1776,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/reject/5c5483d7-3f92-4910-ac80-f5d32c5ed62d",
+							"raw": "{{dev-url}}/otc/api/v1/reject/5c5483d7-3f92-4910-ac80-f5d32c5ed62d2",
 							"host": [
 								"{{dev-url}}"
 							],
@@ -1718,7 +1785,7 @@
 								"api",
 								"v1",
 								"reject",
-								"5c5483d7-3f92-4910-ac80-f5d32c5ed62d"
+								"5c5483d7-3f92-4910-ac80-f5d32c5ed62d2"
 							]
 						}
 					},
@@ -1751,7 +1818,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/queryOrder/5c5483d7-3f92-4910-ac80-f5d32c5ed62d",
+							"raw": "{{dev-url}}/otc/api/v1/queryOrder/5c5483d7-3f92-4910-ac80-f5d32c5ed62d2",
 							"host": [
 								"{{dev-url}}"
 							],
@@ -1760,7 +1827,7 @@
 								"api",
 								"v1",
 								"queryOrder",
-								"5c5483d7-3f92-4910-ac80-f5d32c5ed62d"
+								"5c5483d7-3f92-4910-ac80-f5d32c5ed62d2"
 							]
 						}
 					},
@@ -2293,6 +2360,356 @@
 		{
 			"name": "Streaming",
 			"item": []
+		},
+		{
+			"name": "Earn",
+			"item": [
+				{
+					"name": "query-investment-products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/invest/products",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"invest",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deposit-investment",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"OPENUSDT0001\",\n    \"amount\": 1,\n    \"renew\": false,\n    \"day\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/invest/deposit",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"invest",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "renew-investment",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderId\": 1,\n    \"autoRenew\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/invest/renew",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"invest",
+								"renew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "investment-redeem",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderId\": 1,\n    \"amount\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/invest/redeem",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"invest",
+								"redeem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-investment-orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/invest/orders",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"invest",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query-investment-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "btse-api",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "secret",
+								"value": "{{api-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-nonce",
+								"value": "{{api-nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "btse-sign",
+								"value": "{{api-sign}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev-url}}/spot/api/v3.2/invest/history",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"spot",
+								"api",
+								"v3.2",
+								"invest",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const path = pm.request.url.getPath().substring(pm.request.url.getPath().indexOf('/api'));",
+							"const secret = pm.environment.get('api-secret');",
+							"const nonce = new Date().getTime().toString();",
+							"const body = pm.request.method == 'GET' ? '' : pm.request.body.toString();",
+							"",
+							"console.log(body)",
+							"console.log(path + nonce + body)",
+							"const encoded = CryptoJS.HmacSHA384(path + nonce + body, secret);",
+							"",
+							"// pm.variables.set('api-nonce', nonce);",
+							"// pm.variables.set('api-sign', encoded.toString());",
+							"",
+							"pm.environment.set('api-nonce', nonce);",
+							"pm.environment.set('api-sign', encoded.toString());"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	]
 }
