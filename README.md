@@ -167,3 +167,19 @@ Sample connectors for connecting to the BTSE API.
 | :--------   | :--------   |
 |Authentication|otc_ws_authentication.py|
 |Quote Stream|otc_ws_quote_stream.py|
+
+## wallet/Convert/Transfer
+### Public Endpoints
+|Document Name |Python |
+| :--------   | :--------   |
+|Query available crypto network list for currency|queryAvailableCrypo.py|
+|Query exchange rate between assets|queryExchangeRate.py|
+
+### Wallet Endpoints
+|Document Name |Python |
+| :--------   | :--------   |
+|Query Wallet Balance|queryWalletBalance.py|
+|Query Wallet History|WalletqueryWalletHistory.py|
+|Query available currency list for wallet action|queryAvailableCurrency.py|
+|Convert funds||
+|Transfer funds||
