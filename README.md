@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2022-09-14
+  - Add examples to create oco futures order
+
 * 2022-08-19
   - Add examples to get order status via notification v2 websocket topic
 
