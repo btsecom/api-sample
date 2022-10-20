@@ -1,27 +1,25 @@
 #!/usr/bin/env python3
 
-import json
 import requests
 from requests.exceptions import HTTPError
 from utils import (
     get_env_info,
-    get_spot_api_version,
+    get_futures_api_version,
     get_spot_full_url,
     gen_headers,
 )
 
 
-def earn_buy_product(data):
-    url = "/api/{0}/invest/deposit".format(get_spot_api_version())
+def earn_get_ohlcv(data):
+    url = "/api/{0}/user/fees".format(get_futures_api_version())
     env = get_env_info()
-    headers = gen_headers(
-        env["API_KEY"], env["API_SECRET_KEY"], url, json.dumps(data)
-    )
+    headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
+    params = data
     ret = {}
     try:
-        resp = requests.post(
+        resp = requests.get(
             get_spot_full_url(env["API_HOST"], url),
-            json=data,
+            params=params,
             headers=headers,
         )
         resp.raise_for_status()
@@ -35,14 +33,9 @@ def earn_buy_product(data):
 
 
 if __name__ == "__main__":
-    print(
-        earn_buy_product(
-            {
-                "productId": "LENDWGBP000001",
-                "amount": 1,
-                "renew": False,
-                "rate": 77.224,
-                "day": 30,
-            }
-        )
-    )
+    data = {
+        "makerFee": 0,
+        "symbol": "BTCPFC",
+        "takerFee": 0
+    }
+    print(earn_get_ohlcv(data))

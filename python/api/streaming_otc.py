@@ -30,9 +30,7 @@ def on_message(ws, message):
 
     if all_over_threshold:
         _unsubscribe_all(ws)
-        print()
         print("Unsubscribe all quotes.")
-        print()
 
 
 def on_error(ws, error):
@@ -55,6 +53,7 @@ def on_open(ws):
             headers["btse-sign"],
         ],
     }
+    print(payload)
     ws.send(json.dumps(payload))
 
     # subscribe to otc streaming quote

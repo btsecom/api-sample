@@ -11,8 +11,8 @@ from utils import (
 )
 
 
-def earn_buy_product(data):
-    url = "/api/{0}/invest/deposit".format(get_spot_api_version())
+def convert_funds(data):
+    url = "/api/{0}/user/wallet/convert".format(get_spot_api_version())
     env = get_env_info()
     headers = gen_headers(
         env["API_KEY"], env["API_SECRET_KEY"], url, json.dumps(data)
@@ -20,9 +20,7 @@ def earn_buy_product(data):
     ret = {}
     try:
         resp = requests.post(
-            get_spot_full_url(env["API_HOST"], url),
-            json=data,
-            headers=headers,
+            get_spot_full_url(env["API_HOST"], url), json=data, headers=headers
         )
         resp.raise_for_status()
     except HTTPError as http_err:
@@ -36,13 +34,11 @@ def earn_buy_product(data):
 
 if __name__ == "__main__":
     print(
-        earn_buy_product(
+        convert_funds(
             {
-                "productId": "LENDWGBP000001",
-                "amount": 1,
-                "renew": False,
-                "rate": 77.224,
-                "day": 30,
+                "amount": "1",
+                "fromAsset": "BTC",
+                "toAsset": "USD"
             }
         )
     )

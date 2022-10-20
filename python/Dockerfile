@@ -7,6 +7,8 @@ WORKDIR /app
 
 COPY poetry.lock ./
 COPY pyproject.toml ./
+COPY api ./
+COPY .env ./
 
 RUN poetry install
 
