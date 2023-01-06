@@ -29,7 +29,7 @@ def futures_place_limit_order(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp
     return ret
 

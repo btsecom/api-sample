@@ -29,10 +29,17 @@ def earn_redeem_product(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    print(earn_redeem_product({"orderId": 12537, "amount": 2,}))
+    print(
+        earn_redeem_product(
+            {
+                "orderId": 12537,
+                "amount": 2,
+            }
+        )
+    )

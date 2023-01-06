@@ -27,7 +27,7 @@ def spot_place_order(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
         "symbol": "BTC-USD",
         "size": 0.0005,
         "side": "SELL",
-        "type": "MARKET"
+        "type": "MARKET",
     }
 
     limit_order_data = {
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         "size": 0.0005,
         "price": 34000,
         "side": "BUY",
-        "type": "LIMIT"
+        "type": "LIMIT",
     }
 
     oco_order_data = {
@@ -57,7 +57,7 @@ if __name__ == "__main__":
         "type": "OCO",
         "txType": "LIMIT",
         "stopPrice": 20300,
-        "triggerPrice": 20309
+        "triggerPrice": 20309,
     }
 
     peg_order_data = {
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         "side": "BUY",
         "type": "PEG",
         "deviation": -10,
-        "stealth": 10
+        "stealth": 10,
     }
 
     print(spot_place_order(market_order_data))

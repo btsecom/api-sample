@@ -29,10 +29,17 @@ def earn_renew_product(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    print(earn_renew_product({"orderId": 12537, "autoRenew": False,}))
+    print(
+        earn_renew_product(
+            {
+                "orderId": 12537,
+                "autoRenew": False,
+            }
+        )
+    )

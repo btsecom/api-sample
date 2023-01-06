@@ -31,7 +31,7 @@ def earn_get_history(page_number=1, page_size=10):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 

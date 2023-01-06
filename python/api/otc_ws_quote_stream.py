@@ -18,16 +18,15 @@ def on_error(ws, error):
 def on_close(ws, close_status_code, close_msg):
     print("### socket closed ###")
 
-def login(ws,your_token):
-    payload = {
-        "op":"token",
-        "args":[your_token]
-    }
+
+def login(ws, your_token):
+    payload = {"op": "token", "args": [your_token]}
     ws.send(json.dumps(payload))
+
 
 def on_open(ws):
     # auth is mandatory in order to get your own positions
-    your_token = "USER_TOKEN_LOGIN_a2232b5b6b17429cdff8ddc2f14ea8c9_1f188e0225bf4488b16534d1bcedf20e" #enter your token here
+    your_token = "USER_TOKEN_LOGIN_a2232b5b6b17429cdff8ddc2f14ea8c9_1f188e0225bf4488b16534d1bcedf20e"  # enter your token here
     login(ws, your_token)
 
     url = "/ws/otc"
@@ -37,10 +36,7 @@ def on_open(ws):
     payload = {
         "op": "quote",
         "symbol": "BTC-USD",
-        "quantity": {
-            "quantity": 1,
-            "currency": "BTC"
-        }
+        "quantity": {"quantity": 1, "currency": "BTC"},
     }
 
     ws.send(json.dumps(payload))

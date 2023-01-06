@@ -11,6 +11,7 @@ from utils import (
 
 clOrderID = "test-order-placement"
 
+
 def on_message(ws, message):
     payload = json.loads(message)
     print(json.dumps(payload, indent=2))
@@ -27,21 +28,31 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     url = "/ws/spot"
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    ws.send(json.dumps({
-        "op": "authKeyExpires",
-        "args": [headers['btse-api'], headers['btse-nonce'], headers['btse-sign']],
-    }))
-    ws.send(json.dumps({
-        "op": "subscribe",
-        "args": ["fills"],
-    }))
+    ws.send(
+        json.dumps(
+            {
+                "op": "authKeyExpires",
+                "args": [
+                    headers["btse-api"],
+                    headers["btse-nonce"],
+                    headers["btse-sign"],
+                ],
+            }
+        )
+    )
+    ws.send(
+        json.dumps(
+            {
+                "op": "subscribe",
+                "args": ["fills"],
+            }
+        )
+    )
 
-    spot_place_order({
-        "symbol": "BTC-USD",
-        "size": 0.0005,
-        "side": "BUY",
-        "type": "MARKET"
-    })
+    spot_place_order(
+        {"symbol": "BTC-USD", "size": 0.0005, "side": "BUY", "type": "MARKET"}
+    )
+
 
 if __name__ == "__main__":
     # websocket.enableTrace(True)

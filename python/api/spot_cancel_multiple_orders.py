@@ -27,7 +27,7 @@ def spot_place_limit_order(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
@@ -48,7 +48,7 @@ def spot_cancel_order(params):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
@@ -87,4 +87,10 @@ if __name__ == "__main__":
     )
 
     # cancel all orders
-    print(spot_cancel_order({"symbol": "BTC-USD",}))
+    print(
+        spot_cancel_order(
+            {
+                "symbol": "BTC-USD",
+            }
+        )
+    )

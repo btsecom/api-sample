@@ -27,7 +27,7 @@ def transfer_funds(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
                 "amount": "1.0",
                 "asset": "BTC",
                 "toUser": "jamesyu001",
-                "toUserMail": "james.yu@nogle.com"
+                "toUserMail": "james.yu@nogle.com",
             }
         )
     )

@@ -18,15 +18,14 @@ def on_error(ws, error):
 def on_close(ws, close_status_code, close_msg):
     print("### socket closed ###")
 
-def login(ws,your_token):
-    payload = {
-        "op":"token",
-        "args":[your_token]
-    }
+
+def login(ws, your_token):
+    payload = {"op": "token", "args": [your_token]}
     ws.send(json.dumps(payload))
 
+
 def on_open(ws):
-    your_token = "" #enter your token here
+    your_token = ""  # enter your token here
     login(ws, your_token)
 
     payload = {

@@ -18,6 +18,7 @@ def on_error(ws, error):
 def on_close(ws, close_status_code, close_msg):
     print("### socket closed ###")
 
+
 def on_open(ws):
     # auth is mandatory in order to get your own positions
 
@@ -25,9 +26,9 @@ def on_open(ws):
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
     print(headers)
 
-    #enter your token
-    your_token = ""  
-    payload = {"op":"token","args":[your_token]}
+    # enter your token
+    your_token = ""
+    payload = {"op": "token", "args": [your_token]}
     ws.send(json.dumps(payload))
 
     payload = {

@@ -26,17 +26,10 @@ def spot_get_trade_history(params):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    print(
-        spot_get_trade_history(
-            {
-                "symbol": "BTC-USD",
-                "includeOld": True
-            }
-        )
-    )
+    print(spot_get_trade_history({"symbol": "BTC-USD", "includeOld": True}))

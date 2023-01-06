@@ -18,10 +18,17 @@ def futures_get_orderbook(params):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    print(futures_get_orderbook({"symbol": "BTCPFC", "group": 2,}))
+    print(
+        futures_get_orderbook(
+            {
+                "symbol": "BTCPFC",
+                "group": 2,
+            }
+        )
+    )

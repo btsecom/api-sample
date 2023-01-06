@@ -2,7 +2,7 @@
 
 import requests
 from requests.exceptions import HTTPError
-from utils import get_env_info, get_spot_api_version, get_spot_full_url      
+from utils import get_env_info, get_spot_api_version, get_spot_full_url
 
 
 def availableCurrencyNetworks(params):
@@ -19,7 +19,7 @@ def availableCurrencyNetworks(params):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 

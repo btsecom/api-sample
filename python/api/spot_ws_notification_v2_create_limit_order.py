@@ -62,25 +62,27 @@ def on_message(ws, message):
     payload = json.loads(message)
     print(json.dumps(payload, indent=2))
 
-    if (payload['data'] and payload['data']['clOrderID'] == clOrderID):
-        status = payload['data']['status']
+    if payload["data"] and payload["data"]["clOrderID"] == clOrderID:
+        status = payload["data"]["status"]
         # 2: ORDER_INSERTED = Order is inserted successfully
         if status == 2:
-            print('Order is inserted successfully')
-            spot_cancel_order({
-                "symbol": "BTC-USD",
-                "clOrderID": clOrderID,
-            })
+            print("Order is inserted successfully")
+            spot_cancel_order(
+                {
+                    "symbol": "BTC-USD",
+                    "clOrderID": clOrderID,
+                }
+            )
         # 4: ORDER_FULLY_TRANSACTED = Order is fully transacted
         elif status == 4:
-            print('Order is fully transacted')
+            print("Order is fully transacted")
         # 5: ORDER_PARTIALLY_TRANSACTED = Order is partially transacted
         elif status == 5:
-            print('Order is partially transacted')
+            print("Order is partially transacted")
         # 6: ORDER_CANCELLED = Order is cancelled successfully
         # 15: ORDER_REJECTED = Order is rejected
         elif status == 6 or status == 15:
-            print('Order is cancelled successfully')
+            print("Order is cancelled successfully")
 
 
 def on_error(ws, error):
@@ -94,24 +96,38 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     url = "/ws/spot"
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    ws.send(json.dumps({
-        "op": "authKeyExpires",
-        "args": [headers['btse-api'], headers['btse-nonce'], headers['btse-sign']],
-    }))
-    ws.send(json.dumps({
-        "op": "subscribe",
-        "args": ["notificationApiV2"],
-    }))
-    spot_place_limit_order({
-        "clOrderID": clOrderID,
-        "size": 0.0002,
-        "price": 10,
-        "side": "BUY",
-        "symbol": "BTC-USD",
-        "time_in_force": "GTC",
-        "txType": "LIMIT",
-        "type": "LIMIT",
-    })
+    ws.send(
+        json.dumps(
+            {
+                "op": "authKeyExpires",
+                "args": [
+                    headers["btse-api"],
+                    headers["btse-nonce"],
+                    headers["btse-sign"],
+                ],
+            }
+        )
+    )
+    ws.send(
+        json.dumps(
+            {
+                "op": "subscribe",
+                "args": ["notificationApiV2"],
+            }
+        )
+    )
+    spot_place_limit_order(
+        {
+            "clOrderID": clOrderID,
+            "size": 0.0002,
+            "price": 10,
+            "side": "BUY",
+            "symbol": "BTC-USD",
+            "time_in_force": "GTC",
+            "txType": "LIMIT",
+            "type": "LIMIT",
+        }
+    )
 
 
 if __name__ == "__main__":

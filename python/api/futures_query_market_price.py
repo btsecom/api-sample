@@ -18,13 +18,11 @@ def query_market_price(params):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    data = {
-        "symbol": 'BTC-USD'
-    }
+    data = {"symbol": "BTC-USD"}
     print(query_market_price(data))

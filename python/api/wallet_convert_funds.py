@@ -27,18 +27,10 @@ def convert_funds(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    print(
-        convert_funds(
-            {
-                "amount": "1",
-                "fromAsset": "BTC",
-                "toAsset": "USD"
-            }
-        )
-    )
+    print(convert_funds({"amount": "1", "fromAsset": "BTC", "toAsset": "USD"}))

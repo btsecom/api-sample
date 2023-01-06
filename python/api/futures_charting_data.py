@@ -29,7 +29,7 @@ def earn_get_ohlcv(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
@@ -37,5 +37,5 @@ def earn_get_ohlcv(data):
 if __name__ == "__main__":
     data = {
         "symbol": "BTCPFC",
-        }
+    }
     print(earn_get_ohlcv(data))

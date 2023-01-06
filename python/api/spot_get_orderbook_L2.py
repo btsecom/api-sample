@@ -18,10 +18,17 @@ def spot_get_orderbook_L2(params):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    print(spot_get_orderbook_L2({"symbol": "BTC-USD", "depth": 10,}))
+    print(
+        spot_get_orderbook_L2(
+            {
+                "symbol": "BTC-USD",
+                "depth": 10,
+            }
+        )
+    )

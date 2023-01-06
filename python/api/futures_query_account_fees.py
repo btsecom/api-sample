@@ -27,15 +27,11 @@ def earn_get_ohlcv(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    data = {
-        "makerFee": 0,
-        "symbol": "BTCPFC",
-        "takerFee": 0
-    }
+    data = {"makerFee": 0, "symbol": "BTCPFC", "takerFee": 0}
     print(earn_get_ohlcv(data))

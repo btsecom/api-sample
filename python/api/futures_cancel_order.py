@@ -27,22 +27,18 @@ def futures_cancel_order(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    #your orderId
+    # your orderId
     symbol = "BTCPFC"
     clOrderID = "_kqle1661414436953"
     orderID = "3af65527-fb0e-4a01-a8a3-855339948e9f"
     print(
         futures_cancel_order(
-            {
-                "symbol": symbol,
-                "clOrderID": clOrderID,
-                "orderID": orderID
-            }
+            {"symbol": symbol, "clOrderID": clOrderID, "orderID": orderID}
         )
     )

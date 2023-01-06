@@ -29,14 +29,11 @@ def funct(data):
         print("HTTP error occurred: {0}".format(http_err))
     except Exception as err:
         print("Other error occurred: {0}".format(err))
-    else:
+    finally:
         ret = resp.json()
     return ret
 
 
 if __name__ == "__main__":
-    data = {
-        "symbol": "BTCPFC",
-        "riskLimit":0
-    }
+    data = {"symbol": "BTCPFC", "riskLimit": 0}
     print(funct(data))
