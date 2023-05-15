@@ -2,7 +2,7 @@
 
 import websocket
 import json
-from utils import get_env_info, get_futures_ws_url
+from utils import get_env_info, get_futures_ws_url, gen_headers
 
 order_counts = {}
 
@@ -25,8 +25,18 @@ def login(ws, your_token):
 
 
 def on_open(ws):
-    your_token = ""  # enter your token here
-    login(ws, your_token)
+    # auth is mandatory in order to get your own positions
+    url = "/ws/futures"
+    headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
+    payload = {
+        "op": "authKeyExpires",
+        "args": [
+            headers["btse-api"],
+            headers["btse-nonce"],
+            headers["btse-sign"],
+        ],
+    }
+    ws.send(json.dumps(payload))
 
     payload = {"op": "subscribe", "args": ["notificationApiV2"]}
     ws.send(json.dumps(payload))

@@ -23,7 +23,7 @@ def on_open(ws):
     # auth is mandatory in order to get your own positions
     url = "/ws/futures"
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    print(headers)
+
     payload = {
         "op": "authKeyExpires",
         "args": [

@@ -19,19 +19,10 @@ def on_close(ws, close_status_code, close_msg):
     print("### socket closed ###")
 
 
-def login(ws, your_token):
-    payload = {"op": "token", "args": [your_token]}
-    ws.send(json.dumps(payload))
-
-
 def on_open(ws):
-    your_token = ""  # enter your token here
-    login(ws, your_token)
     # auth is mandatory in order to get your own positions
-
     url = "/ws/futures"
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    print(headers)
     payload = {
         "op": "authKeyExpires",
         "args": [

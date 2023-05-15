@@ -24,12 +24,6 @@ def on_open(ws):
 
     url = "/ws/futures"
     headers = gen_headers(env["API_KEY"], env["API_SECRET_KEY"], url)
-    print(headers)
-
-    # enter your token
-    your_token = ""
-    payload = {"op": "token", "args": [your_token]}
-    ws.send(json.dumps(payload))
 
     payload = {
         "op": "authKeyExpires",
