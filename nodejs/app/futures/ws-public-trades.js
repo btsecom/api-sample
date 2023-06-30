@@ -1,5 +1,5 @@
 const webSocket = require('ws');
-const { getAuthHeaders, getWsFuturesUrl } = require('../utils/common');
+const { getWsFuturesUrl } = require('../utils/common');
 
 const client = new webSocket(getWsFuturesUrl());
 
@@ -10,10 +10,6 @@ client.onerror = () => {
 client.onopen = () => {
   function subscribe() {
     if (client.readyState === client.OPEN) {
-      // send auth
-      const header = getAuthHeaders('/ws/futures');
-      console.log('header: ' + JSON.stringify(header));
-
       // subscribe to notification api websocket
       const payload = {
         op: 'subscribe',
