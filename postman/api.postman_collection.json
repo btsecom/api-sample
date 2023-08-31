@@ -202,7 +202,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -212,12 +212,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -252,7 +252,7 @@
 						"method": "PUT",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -262,12 +262,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -302,7 +302,7 @@
 						"method": "DELETE",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -312,12 +312,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -349,7 +349,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -359,12 +359,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -417,7 +417,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -427,12 +427,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -469,7 +469,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -479,12 +479,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -517,7 +517,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -527,12 +527,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -774,7 +774,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -784,12 +784,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -824,7 +824,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -834,12 +834,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -875,7 +875,7 @@
 						"method": "PUT",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -885,12 +885,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -925,7 +925,7 @@
 						"method": "DELETE",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -935,12 +935,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -972,7 +972,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -982,12 +982,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1023,7 +1023,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1033,12 +1033,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1071,7 +1071,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1081,12 +1081,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1119,7 +1119,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1129,12 +1129,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1167,7 +1167,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1177,12 +1177,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1218,7 +1218,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1228,12 +1228,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1268,7 +1268,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1278,12 +1278,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1318,7 +1318,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1328,12 +1328,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1368,7 +1368,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1378,12 +1378,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1410,7 +1410,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1420,12 +1420,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1452,7 +1452,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1462,12 +1462,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1494,7 +1494,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1504,12 +1504,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1545,7 +1545,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1555,12 +1555,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1654,7 +1654,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1664,12 +1664,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1704,7 +1704,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1714,12 +1714,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1755,7 +1755,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1765,12 +1765,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1797,7 +1797,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1807,12 +1807,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1933,7 +1933,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1943,12 +1943,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -1975,7 +1975,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -1985,12 +1985,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2024,7 +2024,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2034,12 +2034,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2076,7 +2076,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2086,12 +2086,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2125,7 +2125,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2135,12 +2135,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2177,7 +2177,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2187,12 +2187,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2224,7 +2224,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2234,12 +2234,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2276,7 +2276,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2286,12 +2286,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2370,7 +2370,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2380,12 +2380,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2423,7 +2423,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2433,12 +2433,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2485,7 +2485,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2495,12 +2495,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2547,7 +2547,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2557,12 +2557,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2598,7 +2598,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2608,12 +2608,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}
@@ -2640,7 +2640,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "btse-api",
+								"key": "request-api",
 								"value": "{{api-key}}",
 								"type": "text"
 							},
@@ -2650,12 +2650,12 @@
 								"type": "text"
 							},
 							{
-								"key": "btse-nonce",
+								"key": "request-nonce",
 								"value": "{{api-nonce}}",
 								"type": "text"
 							},
 							{
-								"key": "btse-sign",
+								"key": "request-sign",
 								"value": "{{api-sign}}",
 								"type": "text"
 							}

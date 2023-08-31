@@ -101,9 +101,9 @@ def on_open(ws):
             {
                 "op": "authKeyExpires",
                 "args": [
-                    headers["btse-api"],
-                    headers["btse-nonce"],
-                    headers["btse-sign"],
+                    headers["request-api"],
+                    headers["request-nonce"],
+                    headers["request-sign"],
                 ],
             }
         )

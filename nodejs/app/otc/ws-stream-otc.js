@@ -17,7 +17,7 @@ client.onopen = () => {
 
       const authPayload = {
         op: 'authKeyExpires',
-        args: [header['btse-api'], header['btse-nonce'], header['btse-sign']],
+        args: [header['request-api'], header['request-nonce'], header['request-sign']],
       };
 
       console.log('sending auth msg: ' + JSON.stringify(authPayload));

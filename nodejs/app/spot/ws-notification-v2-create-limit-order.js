@@ -3,7 +3,7 @@ const axios = require('axios');
 const { SPOT_API_VERSION } = require('../utils/constants');
 const { getAuthHeaders, getWsSpotUrl, getSpotUrl } = require('../utils/common');
 
-const clOrderID = 'test-order-placement'
+const clOrderID = 'test-order-placement';
 
 const cancelOrder = async (params) => {
   const endpoint = `/api/${SPOT_API_VERSION}/order`;
@@ -68,7 +68,7 @@ client.onopen = () => {
 
       const authPayload = {
         op: 'authKeyExpires',
-        args: [header['btse-api'], header['btse-nonce'], header['btse-sign']],
+        args: [header['request-api'], header['request-nonce'], header['request-sign']],
       };
 
       console.log('sending auth msg: ' + JSON.stringify(authPayload));
@@ -94,7 +94,7 @@ client.onopen = () => {
         txType: 'LIMIT',
         triggerPrice: 0,
         type: 'LIMIT',
-      }).catch(console.error)
+      }).catch(console.error);
     }
   }
   subscribe();
@@ -119,12 +119,12 @@ client.onmessage = (e) => {
             clOrderID,
           }).catch(console.error);
           return;
-        };
+        }
         // 4: ORDER_FULLY_TRANSACTED = Order is fully transacted
         case 4: {
           console.log('Order is fully transacted');
           return;
-        };
+        }
         // 5: ORDER_PARTIALLY_TRANSACTED = Order is partially transacted
         case 5: {
           console.log('Order is partially transacted');

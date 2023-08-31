@@ -16,9 +16,9 @@ const getAuthHeaders = (endpoint, body) => {
   const nonce = Date.now().toString();
   const bodyStr = body ? JSON.stringify(body) : '';
   return {
-    'btse-api': API_KEY,
-    'btse-nonce': nonce,
-    'btse-sign': HmacSHA384(`${endpoint}${nonce}${bodyStr}`, API_SECRET_KEY).toString(),
+    'request-api': API_KEY,
+    'request-nonce': nonce,
+    'request-sign': HmacSHA384(`${endpoint}${nonce}${bodyStr}`, API_SECRET_KEY).toString(),
   };
 };
 
