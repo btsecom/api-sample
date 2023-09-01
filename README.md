@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2023-08-31
+  - Update sign header from btse-* to request-*
+
 * 2022-09-14
   - Add examples to create oco futures order
 

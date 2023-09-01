@@ -31,9 +31,9 @@ def on_open(ws):
     payload = {
         "op": "authKeyExpires",
         "args": [
-            headers["btse-api"],
-            headers["btse-nonce"],
-            headers["btse-sign"],
+            headers["request-api"],
+            headers["request-nonce"],
+            headers["request-sign"],
         ],
     }
     ws.send(json.dumps(payload))

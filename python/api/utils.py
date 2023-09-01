@@ -110,9 +110,9 @@ def gen_headers(api_key, api_paraphrase, path, data=""):
     ).hexdigest()
 
     return {
-        "btse-api": api_key,
-        "btse-nonce": nonce,
-        "btse-sign": signature,
+        "request-api": api_key,
+        "request-nonce": nonce,
+        "request-sign": signature,
         "Accept": "application/json;charset=UTF-8",
         "Content-Type": "application/json",
     }
