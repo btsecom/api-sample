@@ -20,7 +20,7 @@
 After importing, follow these steps:
 
 1. Locate the `api-key` field (marked as #1 in the image below) and paste your Testnet API key.
-2. For the `api-secret` field (also marked as #1 in the image below), paste your Testnet API secret.
+2. For the `api-secret` field (marked as #2 in the image below), paste your Testnet API secret.
 
 ![API key and secret setup](snapshots/image3.png)
 
