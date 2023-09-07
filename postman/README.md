@@ -24,4 +24,11 @@ After importing, follow these steps:
 
 ![API key and secret setup](snapshots/image3.png)
 
+## Switch to Testnet Environment
+
+1. On the top right (marked as #1 in the image below), click the environment dropdown.
+2. Choose `Testnet` from the options (marked as #2 in the image below).
+
+![Select Testnet environment](snapshots/image4.png)
+
 Once you've completed these steps, you're ready to use the API collection to make requests to the testnet environment.
