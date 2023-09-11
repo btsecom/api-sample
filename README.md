@@ -13,7 +13,7 @@ Sample connectors for connecting to the BTSE API.
 ## Change Log
 
 * 2023-09-07
-  - Replace variables names `staging-url` and `dev-url` with `api-url` in Postman collection.
+  - Replace the variable names `staging-url` and `dev-url` with `api-url` in Postman collection.
   - Add Testnet environment file in Postman folder.
   - Add steps to import the environment file in the Postman README..
 
