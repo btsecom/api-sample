@@ -67,4 +67,5 @@ Once you've completed these steps, you're ready to use the API collection to mak
 
 Once you've completed these steps, you're ready to use the API collection to make requests to the production environment.
 
-> :warning: **If you are using mobile browser**: Be very careful here!
+> **Warning**
+Please be aware that using the `Production` environment for trading **involves real initial investment risk**. For safer testing of API behaviors, we strongly recommend using the 'Testnet' environment.
