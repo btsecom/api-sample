@@ -53,8 +53,8 @@ Once you've completed these steps, you're ready to use the API collection to mak
 ![Edit environment name](snapshots/image8.png)
 
 5. Replace the value of `api-url` variable (marked as #1 in the image below) with production API URL `https://api.btse.com`.
-6. Locate the `api-key` field (marked as #2 in the image below) and paste your Testnet API key.
-7. For the `api-secret` field (marked as #3 in the image below), paste your Testnet API secret.
+6. Locate the `api-key` field (marked as #2 in the image below) and paste your Production API key.
+7. For the `api-secret` field (marked as #3 in the image below), paste your Production API secret.
 
 ![Edit environment name](snapshots/image9.png)
 
