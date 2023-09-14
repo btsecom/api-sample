@@ -15,9 +15,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/market_summary",
+							"raw": "{{api-url}}/spot/api/v3.2/market_summary",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -35,9 +35,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/ohlcv?symbol=BTC-USD&resolution=30",
+							"raw": "{{api-url}}/spot/api/v3.2/ohlcv?symbol=BTC-USD&resolution=30",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -67,9 +67,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/price",
+							"raw": "{{api-url}}/spot/api/v3.2/price",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -87,9 +87,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/orderbook?symbol=BTC-USDT&group=1&limit_bids=5&limit_asks=10",
+							"raw": "{{api-url}}/spot/api/v3.2/orderbook?symbol=BTC-USDT&group=1&limit_bids=5&limit_asks=10",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -125,9 +125,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/orderbook/L2?symbol=BTC-USD&depth=5",
+							"raw": "{{api-url}}/spot/api/v3.2/orderbook/L2?symbol=BTC-USD&depth=5",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -156,9 +156,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/trades?symbol=BTC-USD",
+							"raw": "{{api-url}}/spot/api/v3.2/trades?symbol=BTC-USD",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -182,9 +182,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/time",
+							"raw": "{{api-url}}/spot/api/v3.2/time",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -232,9 +232,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/order",
+							"raw": "{{api-url}}/spot/api/v3.2/order",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -282,9 +282,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/order",
+							"raw": "{{api-url}}/spot/api/v3.2/order",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -323,9 +323,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/order?symbol=BTC-USD",
+							"raw": "{{api-url}}/spot/api/v3.2/order?symbol=BTC-USD",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -379,9 +379,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/order/cancelAllAfter",
+							"raw": "{{api-url}}/spot/api/v3.2/order/cancelAllAfter",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -442,9 +442,9 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/user/open_orders?symbol=BTC-USD",
+							"raw": "{{api-url}}/spot/api/v3.2/user/open_orders?symbol=BTC-USD",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -490,9 +490,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/user/trade_history?symbol=BTC-USD",
+							"raw": "{{api-url}}/spot/api/v3.2/user/trade_history?symbol=BTC-USD",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -538,9 +538,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{staging-url}}/spot/api/v3.2/user/fees",
+							"raw": "{{api-url}}/spot/api/v3.2/user/fees",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -597,9 +597,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/futures/api/v2.1/market_summary",
+							"raw": "{{api-url}}/futures/api/v2.1/market_summary",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -624,9 +624,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/futures/api/v2.1/ohlcv?symbol=BTCPFC&resolution=15",
+							"raw": "{{api-url}}/futures/api/v2.1/ohlcv?symbol=BTCPFC&resolution=15",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -656,9 +656,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/futures/api/v2.1/price",
+							"raw": "{{api-url}}/futures/api/v2.1/price",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -676,9 +676,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/futures/api/v2.1/orderbook?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/orderbook?symbol=BTCPFC",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -702,9 +702,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/futures/api/v2.1/orderbook/L2?symbol=BTCPFC&depth=5",
+							"raw": "{{api-url}}/futures/api/v2.1/orderbook/L2?symbol=BTCPFC&depth=5",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -733,9 +733,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{staging-url}}/futures/api/v2.1/trades?symbol=BTCPFC&count=10",
+							"raw": "{{api-url}}/futures/api/v2.1/trades?symbol=BTCPFC&count=10",
 							"host": [
-								"{{staging-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -804,9 +804,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/order",
+							"raw": "{{api-url}}/futures/api/v2.1/order",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -854,9 +854,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/order/peg",
+							"raw": "{{api-url}}/futures/api/v2.1/order/peg",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -905,9 +905,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/order",
+							"raw": "{{api-url}}/futures/api/v2.1/order",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -946,9 +946,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/order?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/order?symbol=BTCPFC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1002,9 +1002,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/order/cancelAllAfter",
+							"raw": "{{api-url}}/futures/api/v2.1/order/cancelAllAfter",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1044,9 +1044,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/open_orders?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/open_orders?symbol=BTCPFC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1092,9 +1092,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/trade_history?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/trade_history?symbol=BTCPFC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1140,9 +1140,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/positions?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/positions?symbol=BTCPFC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1197,9 +1197,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/order/close_position",
+							"raw": "{{api-url}}/futures/api/v2.1/order/close_position",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1248,9 +1248,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/risk_limit",
+							"raw": "{{api-url}}/futures/api/v2.1/risk_limit",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1298,9 +1298,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/leverage",
+							"raw": "{{api-url}}/futures/api/v2.1/leverage",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1348,9 +1348,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/settle_in",
+							"raw": "{{api-url}}/futures/api/v2.1/settle_in",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1389,9 +1389,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/fees",
+							"raw": "{{api-url}}/futures/api/v2.1/user/fees",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1431,9 +1431,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/wallet",
+							"raw": "{{api-url}}/futures/api/v2.1/user/wallet",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1473,9 +1473,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/wallet_history",
+							"raw": "{{api-url}}/futures/api/v2.1/user/wallet_history",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1515,9 +1515,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/user/margin?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/margin?symbol=BTCPFC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1575,9 +1575,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/futures/api/v2.1/wallet/transfer",
+							"raw": "{{api-url}}/futures/api/v2.1/wallet/transfer",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"futures",
@@ -1634,9 +1634,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/getMarket",
+							"raw": "{{api-url}}/otc/api/v1/getMarket",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"otc",
@@ -1684,9 +1684,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/quote",
+							"raw": "{{api-url}}/otc/api/v1/quote",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"otc",
@@ -1734,9 +1734,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/accept/752191c9-ee6f-46d5-9e68-0c268df9b5e11",
+							"raw": "{{api-url}}/otc/api/v1/accept/752191c9-ee6f-46d5-9e68-0c268df9b5e11",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"otc",
@@ -1776,9 +1776,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/reject/5c5483d7-3f92-4910-ac80-f5d32c5ed62d2",
+							"raw": "{{api-url}}/otc/api/v1/reject/5c5483d7-3f92-4910-ac80-f5d32c5ed62d2",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"otc",
@@ -1818,9 +1818,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/otc/api/v1/queryOrder/5c5483d7-3f92-4910-ac80-f5d32c5ed62d2",
+							"raw": "{{api-url}}/otc/api/v1/queryOrder/5c5483d7-3f92-4910-ac80-f5d32c5ed62d2",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"otc",
@@ -1877,9 +1877,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/availableCurrencyNetworks?currency=BTC",
+							"raw": "{{api-url}}/spot/api/v3.2/availableCurrencyNetworks?currency=BTC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -1903,9 +1903,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/exchangeRate?srcCurrency=BTC&targetCurrency=USD",
+							"raw": "{{api-url}}/spot/api/v3.2/exchangeRate?srcCurrency=BTC&targetCurrency=USD",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -1954,9 +1954,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -1996,9 +1996,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet_history",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet_history",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2054,9 +2054,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/address",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet/address",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2097,9 +2097,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/address?currency=BTC",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet/address?currency=BTC",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2155,9 +2155,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/withdraw",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet/withdraw",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2198,9 +2198,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/availableCurrencies?action=SEND",
+							"raw": "{{api-url}}/spot/api/v3.2/availableCurrencies?action=SEND",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2254,9 +2254,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/convert",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet/convert",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2306,9 +2306,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/user/wallet/transfer",
+							"raw": "{{api-url}}/spot/api/v3.2/user/wallet/transfer",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2391,9 +2391,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/invest/products",
+							"raw": "{{api-url}}/spot/api/v3.2/invest/products",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2453,9 +2453,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/invest/deposit",
+							"raw": "{{api-url}}/spot/api/v3.2/invest/deposit",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2515,9 +2515,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/invest/renew",
+							"raw": "{{api-url}}/spot/api/v3.2/invest/renew",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2577,9 +2577,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/invest/redeem",
+							"raw": "{{api-url}}/spot/api/v3.2/invest/redeem",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2619,9 +2619,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/invest/orders",
+							"raw": "{{api-url}}/spot/api/v3.2/invest/orders",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
@@ -2661,9 +2661,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{dev-url}}/spot/api/v3.2/invest/history",
+							"raw": "{{api-url}}/spot/api/v3.2/invest/history",
 							"host": [
-								"{{dev-url}}"
+								"{{api-url}}"
 							],
 							"path": [
 								"spot",
