@@ -51,7 +51,7 @@ placeLimitOrder({
   price: 0.5,
   side: 'BUY',
   timeInForce: 'GTC',
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
   txType: 'LIMIT',
   triggerPrice: 0,
   type: 'LIMIT',

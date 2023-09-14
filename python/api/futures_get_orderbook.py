@@ -27,7 +27,7 @@ if __name__ == "__main__":
     print(
         futures_get_orderbook(
             {
-                "symbol": "BTCPFC",
+                "symbol": "BTCPERP",
                 "group": 2,
             }
         )

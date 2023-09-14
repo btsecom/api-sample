@@ -22,7 +22,7 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     payload = {
         "op": "subscribe",
-        "args": ["snapshot:LTCPFC_0"],
+        "args": ["snapshot:LTCPERP_0"],
     }
     ws.send(json.dumps(payload))
 

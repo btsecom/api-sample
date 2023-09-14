@@ -13,7 +13,7 @@ client.onopen = () => {
       // subscribe to notification api websocket
       const payload = {
         op: 'subscribe',
-        args: ['tradeHistoryApi:BTCPFC'],
+        args: ['tradeHistoryApi:BTCPERP'],
       };
       console.log('sending msg: ' + JSON.stringify(payload));
       client.send(JSON.stringify(payload));

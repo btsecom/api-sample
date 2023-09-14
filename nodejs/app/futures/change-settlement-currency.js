@@ -22,7 +22,7 @@ const changeSettlementCurrency = async ({
 };
 
 changeSettlementCurrency({
-  symbol: 'ETHPFC',
+  symbol: 'ETHPERP',
   currency: 'ETH',
 })
   .then(console.log)

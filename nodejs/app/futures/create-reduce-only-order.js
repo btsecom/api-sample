@@ -51,7 +51,7 @@ placeReduceOnlyOrder({
   price: 49000,
   side: 'SELL',
   timeInForce: 'GTC',
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
   type: 'LIMIT',
   txType: 'LIMIT',
   reduceOnly: true,

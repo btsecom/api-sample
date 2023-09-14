@@ -36,6 +36,6 @@ def earn_get_ohlcv(data):
 
 if __name__ == "__main__":
     data = {
-        "symbol": "BTCPFC",
+        "symbol": "BTCPERP",
     }
     print(earn_get_ohlcv(data))

@@ -37,7 +37,7 @@ def futures_place_oco_order(data):
 if __name__ == "__main__":
     """
     BUY / Long
-    The current BTCPFC price is 20200, I expect its price will downs less 20100 first and turn to ups over than 20400,
+    The current BTCPERP price is 20200, I expect its price will downs less 20100 first and turn to ups over than 20400,
     so I set a "price" to be 20100, and I also set a "triggerPrice" to be 20400 and "stopPrice" to be 20401 at the same time.
 
     It will create 2 orders at the same time.
@@ -54,7 +54,7 @@ if __name__ == "__main__":
                 "price": "20100",
                 "side": "BUY",
                 "time_in_force": "GTC",
-                "symbol": "BTCPFC",
+                "symbol": "BTCPERP",
                 "triggerPrice": "20400",
                 "stopPrice": "20401",
                 "type": "OCO",
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     )
     """
     SELL / Short
-    The current BTCPFC price is 20200, I expect its price will ups over 20400 first and turn to downs less than 20000,
+    The current BTCPERP price is 20200, I expect its price will ups over 20400 first and turn to downs less than 20000,
     so I set a "price" to be 20400, and I also set a "triggerPrice" to be 20101 and "stopPrice" to be 20100 at the same time.
 
     It will create 2 orders at the same time.
@@ -83,7 +83,7 @@ if __name__ == "__main__":
                 "price": "20400",
                 "side": "SELL",
                 "time_in_force": "GTC",
-                "symbol": "BTCPFC",
+                "symbol": "BTCPERP",
                 "triggerPrice": "20101",
                 "stopPrice": "20100",
                 "type": "OCO",

@@ -34,7 +34,7 @@ def futures_cancel_order(data):
 
 if __name__ == "__main__":
     # your orderId
-    symbol = "BTCPFC"
+    symbol = "BTCPERP"
     clOrderID = "_kqle1661414436953"
     orderID = "3af65527-fb0e-4a01-a8a3-855339948e9f"
     print(

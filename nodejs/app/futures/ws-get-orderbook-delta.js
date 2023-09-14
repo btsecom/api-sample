@@ -4,7 +4,7 @@ const { getWsOssFuturesUrl } = require('../utils/common');
 const reconnectInterval = 3000;
 let client;
 let deltaOrders = {};
-const market = 'USDDPFC';
+const market = 'USDDPERP';
 const grouping = 0;
 const recordsToShow = 15; // number of asks/bids to show
 let lastTimestamp = 0;

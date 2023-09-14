@@ -32,4 +32,4 @@ def futures_get_open_orders(params):
 
 
 if __name__ == "__main__":
-    print(futures_get_open_orders({"symbol": "ETHPFC"}))
+    print(futures_get_open_orders({"symbol": "ETHPERP"}))

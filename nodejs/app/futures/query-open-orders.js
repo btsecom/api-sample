@@ -20,7 +20,7 @@ const getOpenOrders = async ({ symbol, orderID, clOrderID }) => {
 };
 
 getOpenOrders({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
 })
   .then(console.log)
   .catch(console.error);

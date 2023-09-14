@@ -24,4 +24,4 @@ def futures_get_trades(params):
 
 
 if __name__ == "__main__":
-    print(futures_get_trades({"symbol": "BTCPFC", "count": 10}))
+    print(futures_get_trades({"symbol": "BTCPERP", "count": 10}))

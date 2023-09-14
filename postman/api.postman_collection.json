@@ -624,7 +624,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/ohlcv?symbol=BTCPFC&resolution=15",
+							"raw": "{{api-url}}/futures/api/v2.1/ohlcv?symbol=BTCPERP&resolution=15",
 							"host": [
 								"{{api-url}}"
 							],
@@ -637,7 +637,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC",
+									"value": "BTCPERP",
 									"description": "market symbol"
 								},
 								{
@@ -676,7 +676,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/orderbook?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/orderbook?symbol=BTCPERP",
 							"host": [
 								"{{api-url}}"
 							],
@@ -689,7 +689,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								}
 							]
 						}
@@ -702,7 +702,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/orderbook/L2?symbol=BTCPFC&depth=5",
+							"raw": "{{api-url}}/futures/api/v2.1/orderbook/L2?symbol=BTCPERP&depth=5",
 							"host": [
 								"{{api-url}}"
 							],
@@ -716,7 +716,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								},
 								{
 									"key": "depth",
@@ -733,7 +733,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/trades?symbol=BTCPFC&count=10",
+							"raw": "{{api-url}}/futures/api/v2.1/trades?symbol=BTCPERP&count=10",
 							"host": [
 								"{{api-url}}"
 							],
@@ -746,7 +746,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								},
 								{
 									"key": "count",
@@ -796,7 +796,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"size\": 1,\n  \"price\": 11000,\n  \"side\": \"BUY\",\n  \"type\": \"LIMIT\"\n}",
+							"raw": "{\n  \"symbol\": \"BTCPERP\",\n  \"size\": 1,\n  \"price\": 11000,\n  \"side\": \"BUY\",\n  \"type\": \"LIMIT\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -846,7 +846,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"price\": 11500,\n  \"size\": 1,\n  \"side\": \"BUY\",\n  \"stealth\": 10,\n  \"deviation\": -10\n}",
+							"raw": "{\n  \"symbol\": \"BTCPERP\",\n  \"price\": 11500,\n  \"size\": 1,\n  \"side\": \"BUY\",\n  \"stealth\": 10,\n  \"deviation\": -10\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -897,7 +897,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"orderID\": \"61d3ec71-384c-494d-94fc-397a1c169300\",\n  \"type\": \"PRICE\",\n  \"value\": 13000\n}",
+							"raw": "{\n  \"symbol\": \"BTCPERP\",\n  \"orderID\": \"61d3ec71-384c-494d-94fc-397a1c169300\",\n  \"type\": \"PRICE\",\n  \"value\": 13000\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -946,7 +946,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/order?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/order?symbol=BTCPERP",
 							"host": [
 								"{{api-url}}"
 							],
@@ -959,7 +959,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								}
 							]
 						}
@@ -1044,7 +1044,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/user/open_orders?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/open_orders?symbol=BTCPERP",
 							"host": [
 								"{{api-url}}"
 							],
@@ -1058,7 +1058,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								}
 							]
 						}
@@ -1092,7 +1092,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/user/trade_history?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/trade_history?symbol=BTCPERP",
 							"host": [
 								"{{api-url}}"
 							],
@@ -1106,7 +1106,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								}
 							]
 						}
@@ -1140,7 +1140,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/user/positions?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/positions?symbol=BTCPERP",
 							"host": [
 								"{{api-url}}"
 							],
@@ -1154,7 +1154,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								}
 							]
 						}
@@ -1189,7 +1189,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"price\": 0,\n  \"symbol\": \"BTCPFC\",\n  \"type\": \"MARKET\"\n}",
+							"raw": "{\n  \"price\": 0,\n  \"symbol\": \"BTCPERP\",\n  \"type\": \"MARKET\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1240,7 +1240,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"riskLimit\": 0\n}",
+							"raw": "{\n  \"symbol\": \"BTCPERP\",\n  \"riskLimit\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1290,7 +1290,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"leverage\": 0\n}",
+							"raw": "{\n  \"symbol\": \"BTCPERP\",\n  \"leverage\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1340,7 +1340,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"symbol\": \"BTCPFC\",\n  \"currency\": \"BTC\"\n}",
+							"raw": "{\n  \"symbol\": \"BTCPERP\",\n  \"currency\": \"BTC\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1515,7 +1515,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/user/margin?symbol=BTCPFC",
+							"raw": "{{api-url}}/futures/api/v2.1/user/margin?symbol=BTCPERP",
 							"host": [
 								"{{api-url}}"
 							],
@@ -1529,7 +1529,7 @@
 							"query": [
 								{
 									"key": "symbol",
-									"value": "BTCPFC"
+									"value": "BTCPERP"
 								}
 							]
 						}

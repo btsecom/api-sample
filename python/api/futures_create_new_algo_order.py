@@ -35,5 +35,5 @@ def funct(data):
 
 
 if __name__ == "__main__":
-    data = {"size": 7, "price": 23000, "side": "BUY", "symbol": "BTCPFC"}
+    data = {"size": 7, "price": 23000, "side": "BUY", "symbol": "BTCPERP"}
     print(funct(data))

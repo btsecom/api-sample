@@ -5,7 +5,7 @@ import websocket
 import json
 from utils import get_env_info, get_oss_futures_ws_url
 
-MARKET = "LTCPFC"
+MARKET = "LTCPERP"
 GROUPING = 0
 DELTA_SEQ_NUM = 0
 BIDS = {}

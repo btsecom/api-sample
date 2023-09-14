@@ -15,7 +15,7 @@ const getMarketPrice = async (params) => {
 };
 
 getMarketPrice({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
 })
   .then(console.log)
   .catch(console.error);

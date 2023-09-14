@@ -50,7 +50,7 @@ placeTrailingStopOrder({
   size: 1,
   side: 'BUY',
   timeInForce: 'GTC',
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
   type: 'MARKET',
   txType: 'TRIGGER',
   trigger: 'lastPrice', // markPrice or lastPrice

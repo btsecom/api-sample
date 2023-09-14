@@ -17,5 +17,5 @@ const getTradeHistory = async (params) => {
 };
 
 getTradeHistory({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
 }).then(console.log).catch(console.error);

@@ -39,7 +39,7 @@ if __name__ == "__main__":
         "size": 1,
         "price": 20000,
         "side": "SELL",
-        "symbol": "BTCPFC",
+        "symbol": "BTCPERP",
         "type": "LIMIT",
     }
     print(placeReduceOnlyOrder(data))

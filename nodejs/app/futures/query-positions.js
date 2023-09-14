@@ -16,7 +16,7 @@ const getPositions = async ({ symbol }) => {
 };
 
 getPositions({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
 })
   .then(console.log)
   .catch(console.error);

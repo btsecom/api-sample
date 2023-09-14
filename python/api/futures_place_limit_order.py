@@ -42,7 +42,7 @@ if __name__ == "__main__":
                 "size": 0.0002,
                 "price": 10,
                 "side": "BUY",
-                "symbol": "BTCPFC",
+                "symbol": "BTCPERP",
                 "time_in_force": "GTC",
                 "txType": "LIMIT",
                 "type": "LIMIT",

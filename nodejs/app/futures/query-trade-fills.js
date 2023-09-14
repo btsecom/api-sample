@@ -15,7 +15,7 @@ const getTrades = async (params) => {
 };
 
 getTrades({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
   count: 10,
 })
   .then(console.log)

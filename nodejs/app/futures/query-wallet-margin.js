@@ -16,7 +16,7 @@ const getWalletMargin = async (params) => {
 };
 
 getWalletMargin({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
 })
   .then(console.log)
   .catch(console.error);

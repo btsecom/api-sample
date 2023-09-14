@@ -15,7 +15,7 @@ const getOrderbook = async (params) => {
 };
 
 getOrderbook({
-  symbol: 'BTCPFC',
+  symbol: 'BTCPERP',
   group: 2,
 })
   .then(console.log)
