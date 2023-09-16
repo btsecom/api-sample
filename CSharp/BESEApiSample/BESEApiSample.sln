@@ -4,7 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BESEApiSample", "BESEApiSam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Future", "Future", "{19FD288F-E187-49CA-B4D5-16E8EDEFCC81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsAuthentication", "WsAuthentication\WsAuthentication.csproj", "{8FF0CAE9-7BB8-4718-883B-C2F579CB5CD0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spot", "Spot", "{3C4F68F3-F479-45FC-B216-6DFA1B32B448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuturesWsAuthenticationProject", "FuturesWsAuthenticationProject\FuturesWsAuthenticationProject.csproj", "{9B620D32-277C-48F9-8A3A-B60E74CE01DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +18,12 @@ Global
 		{B8690462-D532-47EC-B768-9385C639CA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8690462-D532-47EC-B768-9385C639CA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8690462-D532-47EC-B768-9385C639CA1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FF0CAE9-7BB8-4718-883B-C2F579CB5CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FF0CAE9-7BB8-4718-883B-C2F579CB5CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FF0CAE9-7BB8-4718-883B-C2F579CB5CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FF0CAE9-7BB8-4718-883B-C2F579CB5CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B620D32-277C-48F9-8A3A-B60E74CE01DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B620D32-277C-48F9-8A3A-B60E74CE01DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B620D32-277C-48F9-8A3A-B60E74CE01DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B620D32-277C-48F9-8A3A-B60E74CE01DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8FF0CAE9-7BB8-4718-883B-C2F579CB5CD0} = {19FD288F-E187-49CA-B4D5-16E8EDEFCC81}
+		{9B620D32-277C-48F9-8A3A-B60E74CE01DF} = {19FD288F-E187-49CA-B4D5-16E8EDEFCC81}
 	EndGlobalSection
 EndGlobal
