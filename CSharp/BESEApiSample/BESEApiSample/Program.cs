@@ -40,7 +40,5 @@ await futuresWsAuthentication.StartListeningAsync();
 */
 
 // Websocket Public Trades
-/*
 var futuresWsPublicTrades = new FuturesWsPublicTrades();
 await futuresWsPublicTrades.ConnectAndListenAsync();
-*/

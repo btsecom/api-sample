@@ -16,4 +16,11 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <None Remove=".env" />
+      <Content Include=".env">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

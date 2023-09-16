@@ -4,7 +4,7 @@ using System.Text.Json;
 using BESEApiSample.Common;
 using BESEApiSample.Future.RequestEntities;
 
-namespace BESEApiSample.Future;
+namespace WsAuthentication;
 
 public class FuturesWsAuthentication
 {
