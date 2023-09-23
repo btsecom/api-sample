@@ -1,10 +1,8 @@
 using System.Net.Http.Json;
 using BESEApiSample.Common;
-using BESEApiSample.Spot.RequestEntities;
-using BESEApiSample.Spot.ResponseEntities;
 using Flurl;
 
-namespace BESEApiSample.Spot;
+namespace SpotCancelOrderProject;
 
 public class SpotCancelOrder
 {
@@ -56,7 +54,7 @@ public class SpotCancelOrder
         var headers = Utils.GetHeaders(endPoint);
         foreach (var (key, value) in headers)
         {
-            request.Headers.Add(key, value);
+            request.Headers.Add((string)key, (string?)value);
         }
 
         return request;

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace BESEApiSample.Spot.RequestEntities;
+namespace SpotCancelOrderProject;
 
 public class SpotCancelOrderRequestEntity
 {

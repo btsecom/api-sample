@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace BESEApiSample.Spot.ResponseEntities;
+namespace SpotCancelOrderProject;
 
 public class SpotCancelOrderResponseEntity
 {
