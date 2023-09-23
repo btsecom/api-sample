@@ -2,7 +2,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 using BESEApiSample.Common;
-using BESEApiSample.Future.RequestEntities;
+using BESEApiSample.Common.Entities;
 
 namespace BESEApiSample.Future;
 

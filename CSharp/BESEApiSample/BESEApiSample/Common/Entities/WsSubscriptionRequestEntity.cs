@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace BESEApiSample.Future.RequestEntities;
+namespace BESEApiSample.Common.Entities;
 
 public class WsSubscriptionRequestEntity
 {
