@@ -2,16 +2,14 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using BESEApiSample.Common;
-using BESEApiSample.Spot.RequestEntities;
-using BESEApiSample.Spot.ResponseEntities;
 
-namespace BESEApiSample.Spot;
+namespace SpotMakeOrderProject;
 
 public class SpotMakeOrder
 {
     private readonly HttpClient _httpClient = new();
 
-    public async Task<List<SpotMakeOrderResponseEntity>?> PlaceOrder(SpotOrderRequestEntity requestEntity)
+    public async Task<List<SpotMakeOrderResponseEntity>?> PlaceOrder(SpotMakeOrderRequestEntity requestEntity)
     {
         var requestMessage = GetHttpRequestMessage(requestEntity);
 
@@ -41,7 +39,7 @@ public class SpotMakeOrder
         }
     }
 
-    private static HttpRequestMessage GetHttpRequestMessage(SpotOrderRequestEntity requestEntity)
+    private static HttpRequestMessage GetHttpRequestMessage(SpotMakeOrderRequestEntity requestEntity)
     {
         const string endPoint = $"/api/{ApiConstants.SpotApiVersion}/order/peg";
         var requestBody = JsonSerializer.Serialize(requestEntity);
@@ -50,7 +48,7 @@ public class SpotMakeOrder
 
         foreach (var header in headers)
         {
-            request.Headers.Add(header.Key, header.Value);
+            request.Headers.Add((string)header.Key, (string?)header.Value);
         }
 
         request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");

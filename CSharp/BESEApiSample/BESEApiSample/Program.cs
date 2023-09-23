@@ -1,23 +1,6 @@
-﻿using System.Text.Json;
-using BESEApiSample.Future;
-using BESEApiSample.Spot;
-using BESEApiSample.Spot.RequestEntities;
+﻿using BESEApiSample.Future;
 
 // Make Spot Order
-/* 
-var makeSpotOrder = new SpotMakeOrder();
-
-var spotOrderResponse = await makeSpotOrder.PlaceOrder(new SpotOrderRequestEntity
-{
-    Size = 0.0005M,
-    Side = "BUY",
-    Symbol = "BTC-USD",
-    TxType = "LIMIT",
-    Type = "MARKET",
-});
-        
-Console.WriteLine(JsonSerializer.Serialize(spotOrderResponse));
-*/
 
 // Cancel Spot Order
 /* 

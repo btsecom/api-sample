@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace BESEApiSample.Spot.RequestEntities;
+namespace SpotMakeOrderProject;
 
-public class SpotOrderRequestEntity
+public class SpotMakeOrderRequestEntity
 {
     [JsonPropertyName("symbol")]
     [Required]
