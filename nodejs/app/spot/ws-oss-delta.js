@@ -79,9 +79,6 @@ const connect = () => {
     //        - Disconnect from server
     //        - Sequence number out of order
     //        - Cross orderbook (best-bid >= best-ask)
-    //
-    // Please refer to our api spec for more details:
-    // https://btsecom.github.io/docs/spot/en/#orderbook-incremental-updates
     // ***********************************************
 
     const prepareOrderbookFunc = (map, obj) => {
@@ -124,7 +121,6 @@ const connect = () => {
       console.log();
     };
 
-
     if (typeof e.data === 'string') {
       const now = Date.now();
       if (!lastTimestamp) {
@@ -159,8 +155,7 @@ const connect = () => {
         return;
       }
     }
-
-  }
+  };
 };
 
 connect();

@@ -30,9 +30,6 @@ def on_message(ws, message):
         #        - Disconnect from server
         #        - Sequence number out of order
         #        - Cross orderbook (best-bid >= best-ask)
-        #
-        # Please refer to our api spec for more details:
-        # https://btsecom.github.io/docs/spot/en/#orderbook-incremental-updates
         # ***********************************************
         obj = json.loads(message)
         topic = obj.get("topic", "")
