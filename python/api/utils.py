@@ -91,9 +91,9 @@ def gen_headers(api_key, api_paraphrase, path, data=""):
     Parameters
     ----------
     api_key: str
-        BTSE api key
+        api key
     api_paraphrase: str
-        BTSE api secret
+        api secret
     path: str
         full api path
     data: str

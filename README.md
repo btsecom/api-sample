@@ -12,9 +12,15 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2023-09-27
+  - Remove the btse wording
+
 * 2023-09-23
   - Add dotenv package for Nodejs.
   - Add example in README for running without docker
+
+* 2022-09-14
+  - Add examples to create oco futures order
 
 * 2023-09-07
   - Replace the variable names `staging-url` and `dev-url` with `api-url` in Postman collection.
@@ -23,9 +29,6 @@ Sample connectors for connecting to the BTSE API.
 
 * 2023-08-31
   - Update sign header from btse-* to request-*
-
-* 2022-09-14
-  - Add examples to create oco futures order
 
 * 2022-08-19
   - Add examples to get order status via notification v2 websocket topic
@@ -80,7 +83,7 @@ Sample connectors for connecting to the BTSE API.
   * How to play with python examples with docker
     1. Run `cp config/.env.example python/.env` and fill-in needed data in `.env`
     1. Set `python` as your current working directory
-    1. `make btse-api-python` to build the runtime environment docker image
+    1. `make api-sample-python` to build the runtime environment docker image
     1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run api/spot_get_wallet_balance.py`
 
   * How to play with python examples without docker
@@ -96,7 +99,7 @@ Sample connectors for connecting to the BTSE API.
   * How to play with node examples with docker
     1. Run `cp config/.env.example nodejs/.env` and fill-in needed data in `.env`
     1. Set `nodejs` as your current working directory
-    1. `make btse-api-nodejs` to build the runtime environment docker image
+    1. `make api-sample-nodejs` to build the runtime environment docker image
     1. `make run {{EXAMPLE_FILE}}` to run the example within docker container, for example: `make run app/spot/query-market-summary.js`
 
   * How to play with node examples without docker
