@@ -54,7 +54,7 @@ public class SpotCancelOrder
         var headers = Utils.GetHeaders(endPoint);
         foreach (var (key, value) in headers)
         {
-            request.Headers.Add((string)key, (string?)value);
+            request.Headers.Add(key, (string?)value);
         }
 
         return request;
