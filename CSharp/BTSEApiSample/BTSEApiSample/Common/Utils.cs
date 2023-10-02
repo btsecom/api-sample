@@ -31,7 +31,7 @@ public static class Utils
     }
 
     public static string GetSpotFullUrl(string path) => $"{ApiHost}/spot{path}";
-    public static string GetSpotWsUrl() => $"{ApiHost}/spot";
+    public static string GetSpotWsUrl() => $"{WsHost}/spot";
     public static string GetFuturesFullUrl(string path) => $"{ApiHost}/futures{path}";
     public static string GetFuturesWsUrl() => $"{WsHost}/futures";
     public static string GetOssSpotWsUrl() => $"{WsHost}/oss/spot";
