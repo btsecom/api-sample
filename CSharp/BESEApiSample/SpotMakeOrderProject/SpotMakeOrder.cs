@@ -43,15 +43,16 @@ public class SpotMakeOrder
     {
         const string endPoint = $"/api/{ApiConstants.SpotApiVersion}/order/peg";
         var requestBody = JsonSerializer.Serialize(requestEntity);
-        var headers = Utils.GetHeaders(endPoint, requestBody);
-        var request = new HttpRequestMessage(HttpMethod.Post, Utils.GetSpotFullUrl(endPoint));
+        var request = new HttpRequestMessage(HttpMethod.Post, Utils.GetSpotFullUrl(endPoint))
+        {
+            Content = new StringContent(requestBody, Encoding.UTF8, "application/json"),
+        };
 
+        var headers = Utils.GetHeaders(endPoint, requestBody);
         foreach (var header in headers)
         {
-            request.Headers.Add((string)header.Key, (string?)header.Value);
+            request.Headers.Add(header.Key, (string?)header.Value);
         }
-
-        request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
         return request;
     }
