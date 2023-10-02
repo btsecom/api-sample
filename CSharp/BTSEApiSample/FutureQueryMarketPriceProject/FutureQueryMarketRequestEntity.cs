@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace FutureQueryMarketPriceProject;
 
-public class MarketPriceRequest
+public class FutureQueryMarketRequestEntity
 {
     [JsonPropertyName("symbol")]
     public string Symbol { get; set; }

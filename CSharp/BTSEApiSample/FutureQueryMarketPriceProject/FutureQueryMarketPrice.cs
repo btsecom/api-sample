@@ -7,14 +7,14 @@ public class FutureQueryMarketPrice
 {
     private readonly HttpClient _httpClient = new();
 
-    public async Task<object> GetMarketPriceAsync(MarketPriceRequest request)
+    public async Task<object> GetMarketPriceAsync(FutureQueryMarketRequestEntity requestEntity)
     {
         const string endpoint = $"/api/{ApiConstants.FuturesApiVersion}/price";
         var url = Utils.GetFuturesFullUrl(endpoint)
             .SetQueryParams(new
             {
-                symbol = request.Symbol,
-                useNewSymbolNaming = request.UseNewSymbolNaming
+                symbol = requestEntity.Symbol,
+                useNewSymbolNaming = requestEntity.UseNewSymbolNaming
             });
 
         try
