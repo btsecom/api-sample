@@ -3,7 +3,6 @@
 using FutureQueryMarketPriceProject;
 
 var marketPriceFetcher = new FutureQueryMarketPrice();
-
 var marketPrice = await marketPriceFetcher.GetMarketPriceAsync(new FutureQueryMarketRequestEntity
 {
     Symbol = "BTCPFC", // Change to your symbol
