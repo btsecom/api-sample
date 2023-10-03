@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { HmacSHA384 } = require('crypto-js');
 
 const { API_HOST, API_KEY, API_SECRET_KEY, WS_HOST } = process.env;

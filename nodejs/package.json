@@ -1,25 +1,16 @@
 {
-  "name": "btse-api-nodejs",
+  "name": "api-sample-nodejs",
   "version": "1.0.0",
-  "description": "BTSE API for node",
+  "description": "API sample for nodejs",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix **/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/btsecom/api-sample.git"
-  },
   "keywords": [
-    "btse",
     "api"
   ],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/btsecom/api-sample/issues"
-  },
-  "homepage": "https://github.com/btsecom/api-sample#readme",
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
@@ -29,6 +20,7 @@
   "dependencies": {
     "axios": "^0.23.0",
     "crypto-js": "^4.1.1",
+    "dotenv": "^16.3.1",
     "ws": "^8.2.3"
   }
 }
