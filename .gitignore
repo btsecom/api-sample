@@ -6,6 +6,3 @@ __pycache__
 
 # doc
 *.swp
-CSharp/.DS_Store
-.DS_Store
-CSharp/BESEApiSample/.idea
