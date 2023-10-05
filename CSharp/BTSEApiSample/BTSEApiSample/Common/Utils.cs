@@ -42,11 +42,11 @@ public static class Utils
     public static Dictionary<string, string> GetHeaders(string path, string data = "")
     {
         var nonce = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-        var message = path + nonce + data;
+        var pathData = path + nonce + data;
 
         var encoding = Encoding.GetEncoding("UTF-8");
         using var hmac = new HMACSHA384(encoding.GetBytes(ApiSecretKey));
-        var hash = hmac.ComputeHash(encoding.GetBytes(message));
+        var hash = hmac.ComputeHash(encoding.GetBytes(pathData));
         var signature = BitConverter.ToString(hash).Replace("-", "").ToLower();
 
         return new Dictionary<string, string>
