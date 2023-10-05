@@ -44,7 +44,7 @@ public static class Utils
         var nonce = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         var message = path + nonce + data;
 
-        var encoding = Encoding.GetEncoding("ISO-8859-1");
+        var encoding = Encoding.GetEncoding("UTF-8");
         using var hmac = new HMACSHA384(encoding.GetBytes(ApiSecretKey));
         var hash = hmac.ComputeHash(encoding.GetBytes(message));
         var signature = BitConverter.ToString(hash).Replace("-", "").ToLower();
