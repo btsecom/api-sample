@@ -12,6 +12,9 @@ Sample connectors for connecting to the BTSE API.
 
 ## Change Log
 
+* 2023-10-05
+  - Add .NET6 sample code.
+
 * 2023-09-27
   - Remove the btse wording
 
@@ -109,7 +112,13 @@ Sample connectors for connecting to the BTSE API.
     1. `npm install` to install required packages
     1. `node {{EXAMPLE_FILE}}` to run the example, for example: `node app/spot/query-market-summary.js`
 
+* [C#](https://github.com/btsecom/api-sample/tree/master/CSharp/BTSEApiSample)
 
+  * How to play with C# examples without docker
+    1. Run `cp config/.env.example CSharp/BTSEApiSample/BTSEApiSample/.env` and fill-in needed data in `.env`
+    1. Install .NET6 SDK. You can find download link [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
+    1. Open `CSharp/BTSEApiSample/BTSEApiSample.sln` with Visual Studio.
+    1. Run the project you want to test with Visual Studio.
 
 # Files Comparison
 ## Earn
