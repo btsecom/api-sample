@@ -1575,7 +1575,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{api-url}}/futures/api/v2.1/wallet/transfer",
+							"raw": "{{api-url}}/futures/api/v2.1/user/wallet/transfer",
 							"host": [
 								"{{api-url}}"
 							],
@@ -1583,6 +1583,7 @@
 								"futures",
 								"api",
 								"v2.1",
+								"user",
 								"wallet",
 								"transfer"
 							]
